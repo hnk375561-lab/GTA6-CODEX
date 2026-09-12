@@ -1,3 +1,25 @@
+# ⚠️ HALLAZGO F-06 (auditoría forense 12/09/2026) — ESTE ARCHIVO ESTÁ
+# MUERTO EN EL HOSTING ACTUAL. `_headers` es una convención de Cloudflare
+# Pages/Workers (y Netlify) para declarar headers de respuesta sin
+# backend — el hosting real de este proyecto, confirmado leyendo
+# next.config.js y .github/workflows/deploy-pages.yml, es GitHub Pages
+# desde el 10/09/2026. GitHub Pages NO interpreta un archivo `_headers`:
+# no es una convención que su servidor estático reconozca, así que las
+# reglas de Cache-Control de más abajo no se aplican a nada hoy — son
+# ruido, no una configuración activa. El caché real de imágenes/estáticos
+# en GitHub Pages depende únicamente de los headers por defecto que pone
+# GitHub/Fastly delante del sitio.
+#
+# Se deja el archivo (no se borra) porque el comentario original de abajo
+# documenta un incidente real de cuota en el hosting anterior
+# (Cloudflare) que puede repetirse si el proyecto vuelve a poner
+# Cloudflare como proxy delante de un dominio propio (next.config.js ya
+# menciona esa opción para poder tener CSP real vía headers HTTP en vez
+# del <meta> actual) — en ESE escenario futuro, este archivo sí volvería
+# a ser relevante. Hasta entonces, no asumir que el cacheo de imágenes
+# está resuelto por este archivo: no lo está.
+#
+# --- Comentario original (10/09/2026), válido para el hosting anterior ---
 # Cache-Control para archivos estáticos servidos por Cloudflare Workers
 # Static Assets (todo lo que vive en /public y los build files inmutables
 # de _next/static).

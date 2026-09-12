@@ -111,12 +111,30 @@ export default async function RootLayout({
             carga hoy: Google Analytics/AdSense (ConsentBanner, AdUnit),
             Cloudflare Web Analytics (beacon de abajo) y miniaturas de
             YouTube (GalleryExplorer/media.ts). Actualizar esta lista si
-            se agrega un origen externo nuevo. */}
+            se agrega un origen externo nuevo.
+
+            HALLAZGO F-03 (auditoría forense 12/09/2026): `script-src`
+            tenía 'unsafe-inline', que anula gran parte del valor del CSP
+            (permite ejecutar cualquier <script> inline inyectado, sin
+            importar el resto de la política). Se reemplaza por el hash
+            SHA-256 del ÚNICO script inline real que este archivo
+            necesita ejecutar antes de hidratar (el snippet anti-FOUC de
+            dark mode, más abajo) — un nonce no sirve acá porque el sitio
+            es `output: 'export'` (no hay servidor por request que pueda
+            generar uno nuevo cada vez; un nonce fijo hardcodeado sería
+            equivalente a 'unsafe-inline'). Un hash de contenido SÍ es
+            seguro en un sitio estático: el contenido del script no
+            cambia entre requests, así que un hash fijo lo identifica sin
+            abrir la puerta a cualquier otro script inyectado.
+            SI SE EDITA EL SCRIPT ANTI-FOUC DE ABAJO, HAY QUE RECALCULAR
+            ESTE HASH (si no, el script queda bloqueado por el propio CSP
+            y el sitio hace FOUC en dark mode otra vez) — ver
+            `scripts/lib/csp-inline-script-hash.mjs`, que lo calcula. */}
         <meta
           httpEquiv="Content-Security-Policy"
           content={[
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://static.cloudflareinsights.com https://*.google.com https://*.doubleclick.net",
+            "script-src 'self' 'sha256-Et25bcpi2pcdHBaSn93xcHoFAgrYLd6nbb0GqBgfPBA=' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://static.cloudflareinsights.com https://*.google.com https://*.doubleclick.net",
             "style-src 'self' 'unsafe-inline'",
             "img-src 'self' data: https://img.youtube.com https://i.ytimg.com https://*.googlesyndication.com https://*.google.com https://*.gstatic.com https://*.google-analytics.com",
             "font-src 'self' data:",

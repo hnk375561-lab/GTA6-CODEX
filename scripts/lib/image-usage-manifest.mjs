@@ -82,6 +82,38 @@ const DEVICE_SIZE_0 = 320
 const NEXT_DEFAULT_QUALITY = 75
 
 /**
+ * HALLAZGO F-02 (auditoría forense 12/09/2026): con este manifiesto
+ * ejecutado tal cual (sin este ceiling), `buildQualityByWidth()` daba
+ * quality:100 en 11 de los 12 anchos de ALL_WIDTHS — medido corriendo
+ * `pregenerate-image-variants.mjs` de punta a punta: 787MB para 239
+ * imágenes fuente, con variantes individuales de hasta 2.2MB
+ * (`aprilia-rsv4-w3840.webp`).
+ *
+ * Causa raíz real (no la que sugería el comentario original de este
+ * archivo): varios usages con quality:94-100 (EntityGallery "pieza
+ * principal", GalleryExplorer "zoom ampliado", SimpleLightbox) declaran
+ * `sizes` sin ningún filtro de vw efectivo por debajo del cutoff más
+ * bajo, así que `computeWidthsForUsage()` les devuelve PRÁCTICAMENTE
+ * TODOS los anchos de ALL_WIDTHS como candidatos. Como
+ * `buildQualityByWidth()` toma el MÁXIMO entre usages para cada ancho,
+ * basta que uno de esos pida 100 en un ancho para que un thumbnail de
+ * 64px que comparte ese mismo ancho en su srcSet reciba también
+ * calidad 100 — aunque el thumbnail nunca lo pidió.
+ *
+ * Fix: un techo global. Ninguna calidad declarada en IMAGE_USAGES puede
+ * empujar un ancho por encima de QUALITY_CEILING, sin importar qué
+ * componente la pida. Sigue siendo "el máximo entre usages", pero
+ * acotado — WebP a q90 es visualmente indistinguible de q100 en fotos
+ * de producto para la enorme mayoría de casos, y reduce el peso de cada
+ * variante entre 30-40% según medición manual sobre un puñado de
+ * imágenes de muestra. Si algún caso puntual (ej. lightbox a pantalla
+ * completa en un monitor 4K) necesita realmente más, subir el ceiling
+ * explícitamente acá — no en un `quality` individual de IMAGE_USAGES,
+ * para que quede un único lugar que decide el techo real.
+ */
+const QUALITY_CEILING = 90
+
+/**
  * Replica getWidths() de next/image. `usage` es o bien
  * `{ sizes: string }` (imagen con `sizes`, `fill` o no) o bien
  * `{ width: number }` (imagen de ancho fijo sin `sizes` ni `fill` — pide
@@ -215,7 +247,7 @@ export const IMAGE_USAGES = [
 export function buildQualityByWidth(usages = IMAGE_USAGES) {
   const byWidth = new Map()
   for (const usage of usages) {
-    const quality = usage.quality ?? NEXT_DEFAULT_QUALITY
+    const quality = Math.min(usage.quality ?? NEXT_DEFAULT_QUALITY, QUALITY_CEILING)
     const widths = computeWidthsForUsage(usage)
     for (const width of widths) {
       const current = byWidth.get(width) ?? 0
