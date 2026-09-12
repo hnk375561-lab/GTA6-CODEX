@@ -46,13 +46,13 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
           <div className="space-y-8 lg:sticky lg:top-8">
             {/* Identificador de archivo */}
             <Reveal>
-              <div className="flex items-center gap-3 border-b border-oxide-red/30 pb-4">
-                <div className="h-2 w-2 bg-oxide-red" />
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-oxide-red/30 pb-4">
+                <div className="h-2 w-2 flex-shrink-0 bg-oxide-red" />
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink/70">
                   ARCHIVO AUTOMOTOR VERIFICADO
                 </span>
                 {evidenceCoveragePct !== null && evidenceCoveragePct > 0 && (
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-archive-green ml-auto">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-archive-green sm:ml-auto">
                     {evidenceCoveragePct}% CON FUENTE CITADA
                   </span>
                 )}
@@ -108,7 +108,7 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
               return (
                 <Reveal key={vehicle.slug} delay={300 + index * 150}>
                   <div
-                    className="group relative bg-white border border-border p-6 shadow-sm"
+                    className="group relative bg-surface-card border border-border p-6 shadow-sm"
                     style={{
                       transform: `rotate(${index === 0 ? -1 : 1}deg)`,
                       transition: 'transform 300ms ease-out',
