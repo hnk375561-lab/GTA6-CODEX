@@ -47,6 +47,95 @@ jobs:
           GITHUB_PAGES_BASE_PATH: '/Sin-Frenos'
           NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/Sin-Frenos
 
+          # ------------------------------------------------------------
+          # HALLAZGO #1 (auditoría FASE 2, 12/09/2026): estas 24 variables
+          # NEXT_PUBLIC_* NO se leían acá. El sitio es `output: 'export'`
+          # (estático puro) — Next.js las hornea en el HTML/JS en BUILD
+          # TIME, no existen en runtime porque no hay runtime. Si este
+          # step no las lee (ni como `env:` ni como `${{ secrets.* }}` /
+          # `${{ vars.* }}`), quedan `undefined` para siempre en cada
+          # página publicada, sin importar qué tenga cargado el repo en
+          # "Settings → Secrets and variables" — el workflow simplemente
+          # nunca las leía.
+          #
+          # Configuración requerida ANTES de que este workflow corra en
+          # verde con datos reales — en GitHub: Settings → Secrets and
+          # variables → Actions:
+          #   - Como Repository secret: todo lo que sea token/ID de
+          #     cuenta que preferís no dejar en texto plano en el repo
+          #     (AdSense client ID, GA ID, CF Analytics token, tag de
+          #     afiliado MELI, URLs/entry IDs de los 3 Google Forms).
+          #   - Como Repository variable (${{ vars.* }}): lo que ya es
+          #     público de todas formas y no necesita el nivel de
+          #     protección de un secret (ej. NEXT_PUBLIC_GA_ID, que
+          #     igual queda visible en el HTML publicado).
+          # Cualquier variable de las de abajo que dejes sin cargar en
+          # GitHub queda simplemente vacía (${{ secrets.X }} sin setear
+          # resuelve a string vacío) y su componente correspondiente
+          # sigue degradando a "no renderiza nada", igual que hoy — no
+          # rompe el build.
+
+          # AdSense (AdUnit.tsx, ConsentBanner, ads.txt ya sirve solo)
+          NEXT_PUBLIC_ADSENSE_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT_ID }}
+          NEXT_PUBLIC_ADSENSE_ANCHOR_SLOT_ID: ${{ secrets.NEXT_PUBLIC_ADSENSE_ANCHOR_SLOT_ID }}
+
+          # Google Analytics 4 / gtag.js (activa también ConsentBanner)
+          NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+
+          # Cloudflare Web Analytics (beacon en layout.tsx)
+          NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ secrets.NEXT_PUBLIC_CF_ANALYTICS_TOKEN }}
+
+          # Afiliado MercadoLibre — sin el tag, el botón funciona pero
+          # sin comisión
+          NEXT_PUBLIC_MELI_AFFILIATE_TAG: ${{ secrets.NEXT_PUBLIC_MELI_AFFILIATE_TAG }}
+
+          # Afiliados seguro / financiación
+          NEXT_PUBLIC_SEGURO_AFFILIATE_URL: ${{ secrets.NEXT_PUBLIC_SEGURO_AFFILIATE_URL }}
+          NEXT_PUBLIC_FINANCIACION_AFFILIATE_URL: ${{ secrets.NEXT_PUBLIC_FINANCIACION_AFFILIATE_URL }}
+          NEXT_PUBLIC_FINTECH_AFFILIATE_NAME: ${{ vars.NEXT_PUBLIC_FINTECH_AFFILIATE_NAME }}
+          NEXT_PUBLIC_FINTECH_AFFILIATE_URL: ${{ secrets.NEXT_PUBLIC_FINTECH_AFFILIATE_URL }}
+
+          # Cafecito
+          NEXT_PUBLIC_CAFECITO_USERNAME: ${{ vars.NEXT_PUBLIC_CAFECITO_USERNAME }}
+
+          # Ads nativos (Taboola/Outbrain/etc.)
+          NEXT_PUBLIC_NATIVE_ADS_SCRIPT_SRC: ${{ secrets.NEXT_PUBLIC_NATIVE_ADS_SCRIPT_SRC }}
+          NEXT_PUBLIC_NATIVE_ADS_CONTAINER_ID: ${{ secrets.NEXT_PUBLIC_NATIVE_ADS_CONTAINER_ID }}
+
+          # Google Forms — cotización/compra (LeadQuoteForm.tsx). Sin
+          # estas 5, cae a mailto: por diseño (no rompe nada).
+          NEXT_PUBLIC_LEADS_GFORM_ACTION_URL: ${{ secrets.NEXT_PUBLIC_LEADS_GFORM_ACTION_URL }}
+          NEXT_PUBLIC_LEADS_GFORM_ENTRY_NOMBRE: ${{ secrets.NEXT_PUBLIC_LEADS_GFORM_ENTRY_NOMBRE }}
+          NEXT_PUBLIC_LEADS_GFORM_ENTRY_CONTACTO: ${{ secrets.NEXT_PUBLIC_LEADS_GFORM_ENTRY_CONTACTO }}
+          NEXT_PUBLIC_LEADS_GFORM_ENTRY_VEHICULO: ${{ secrets.NEXT_PUBLIC_LEADS_GFORM_ENTRY_VEHICULO }}
+          NEXT_PUBLIC_LEADS_GFORM_ENTRY_COMENTARIO: ${{ secrets.NEXT_PUBLIC_LEADS_GFORM_ENTRY_COMENTARIO }}
+
+          # Google Forms — venta (SellVehicleLeadForm.tsx). Mismo
+          # fallback a mailto: si faltan.
+          NEXT_PUBLIC_VENTA_GFORM_ACTION_URL: ${{ secrets.NEXT_PUBLIC_VENTA_GFORM_ACTION_URL }}
+          NEXT_PUBLIC_VENTA_GFORM_ENTRY_NOMBRE: ${{ secrets.NEXT_PUBLIC_VENTA_GFORM_ENTRY_NOMBRE }}
+          NEXT_PUBLIC_VENTA_GFORM_ENTRY_CONTACTO: ${{ secrets.NEXT_PUBLIC_VENTA_GFORM_ENTRY_CONTACTO }}
+          NEXT_PUBLIC_VENTA_GFORM_ENTRY_VEHICULO: ${{ secrets.NEXT_PUBLIC_VENTA_GFORM_ENTRY_VEHICULO }}
+          NEXT_PUBLIC_VENTA_GFORM_ENTRY_COMENTARIO: ${{ secrets.NEXT_PUBLIC_VENTA_GFORM_ENTRY_COMENTARIO }}
+
+          # Google Forms — trámites (TramitesLeadForm.tsx). Mismo
+          # fallback a mailto: si faltan. NOTA: la auditoría PDF original
+          # decía "2 formularios" (compra/venta) — en realidad son 3, este
+          # es el tercero, encontrado en esta ronda al grepear src/ entero.
+          NEXT_PUBLIC_TRAMITES_GFORM_ACTION_URL: ${{ secrets.NEXT_PUBLIC_TRAMITES_GFORM_ACTION_URL }}
+          NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_NOMBRE: ${{ secrets.NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_NOMBRE }}
+          NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_CONTACTO: ${{ secrets.NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_CONTACTO }}
+          NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_TRAMITE: ${{ secrets.NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_TRAMITE }}
+          NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_COMENTARIO: ${{ secrets.NEXT_PUBLIC_TRAMITES_GFORM_ENTRY_COMENTARIO }}
+
+          # NOTA: NEXT_PUBLIC_WHATSAPP_NUMBER y NEXT_PUBLIC_BLOB_BASE_URL
+          # NO se agregan acá a propósito — ambos ya tienen default
+          # hardcodeado seguro en el código (FinancingCalculator.tsx e
+          # image-loader.ts respectivamente) y degradan bien sin esta
+          # variable. Descomentar solo si querés overridearlos:
+          # NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ secrets.NEXT_PUBLIC_WHATSAPP_NUMBER }}
+          # NEXT_PUBLIC_BLOB_BASE_URL: ${{ vars.NEXT_PUBLIC_BLOB_BASE_URL }}
+
       - name: Evitar procesamiento Jekyll (rompe /_next/*, ver public/.nojekyll)
         # public/.nojekyll ya se copia solo a out/ en el export estático de
         # Next.js, pero este paso es un seguro extra explícito: sin este
