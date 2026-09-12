@@ -15,7 +15,49 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # HALLAZGO F-01 (auditoría forense 12/09/2026): este workflow y
+  # `deploy.yml` (el gate de type-check/lint/test) se disparaban los dos
+  # con `push a main`, EN PARALELO, sin que uno dependiera del otro. Un
+  # commit que rompía type-check, lint o tests igual terminaba publicado
+  # en GitHub Pages, porque GitHub Actions no bloquea un workflow por el
+  # resultado de otro workflow distinto salvo que se lo indiques
+  # explícitamente (`needs`, o `workflow_run`).
+  #
+  # Solución elegida: en vez de encadenar dos workflows separados con
+  # `workflow_run` (frágil — depende del nombre exacto del otro workflow
+  # y de permisos extra para leer su conclusion), este mismo workflow
+  # ahora se auto-gatea: corre su propia verificación de tipos/lint/tests
+  # como primer job, y el job de `build` requiere (`needs:`) que ese job
+  # haya terminado en verde. `deploy.yml` sigue existiendo tal cual
+  # estaba y sigue corriendo en cada push/PR — sirve como señal visible
+  # en la pestaña Actions y en PRs — pero la publicación real a
+  # producción ya NO depende únicamente de que alguien lo mire.
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
   build:
+    needs: quality-gate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
