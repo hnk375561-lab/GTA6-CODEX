@@ -44,11 +44,7 @@
     "raw": "USD 41.000 (referencia internacional)"
   },
   "consumo": "14.7 kWh/100km",
-  "dimensiones": {
-    "largo": "4165 mm",
-    "ancho": "1800 mm",
-    "alto": "1575 mm"
-  },
+  "dimensiones": "4165 mm largo x 1800 mm ancho x 1575 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.hyundai.com.ar",

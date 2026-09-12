@@ -57,11 +57,7 @@
     "raw": "USD 111.630 (precio base de referencia aproximado según mercado de EE. UU.)"
   },
   "consumo": "Autonomía estimada entre 592 km (Plaid) y hasta 744 km WLTP según la versión",
-  "dimensiones": {
-    "largo": "4959 mm",
-    "ancho": "1964 mm",
-    "alto": "1455 mm"
-  },
+  "dimensiones": "4959 mm largo x 1964 mm ancho x 1455 mm alto",
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://www.caranddriver.com/tesla/model-s",

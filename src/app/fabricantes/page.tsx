@@ -83,11 +83,16 @@ export default async function ManufacturersHubPage() {
 
         <Reveal className="stagger grid grid-cols-2 gap-6 sm:grid-cols-3 xl:grid-cols-4">
           {manufacturers.map((manufacturer) => (
-            <ManufacturerCardV2
-              key={manufacturer.slug}
-              entity={manufacturer}
-              relationCount={relationCountBySlug[manufacturer.slug]}
-            />
+            // id + scroll-mt: ancla real para los deep links del home
+            // (#toyota, #ford, etc. — ver ManufacturerArchive.tsx). Antes
+            // no existía ningún id de fabricante en esta página y esos
+            // links caían siempre al tope del listado completo (P1-05).
+            <div key={manufacturer.slug} id={manufacturer.slug} className="scroll-mt-24">
+              <ManufacturerCardV2
+                entity={manufacturer}
+                relationCount={relationCountBySlug[manufacturer.slug]}
+              />
+            </div>
           ))}
         </Reveal>
       </div>

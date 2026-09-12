@@ -49,11 +49,7 @@
     "raw": "USD 46.380 (MSRP base en EE.UU.) / Desde 41.970 € en Europa"
   },
   "consumo": "15.3 kWh/100km (equivalente a 113 MPGe según ciclo EPA / WLTP)",
-  "dimensiones": {
-    "largo": "4750 mm",
-    "ancho": "1921 mm",
-    "alto": "1624 mm"
-  },
+  "dimensiones": "4750 mm largo x 1921 mm ancho x 1624 mm alto",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.caranddriver.com/tesla/model-y",

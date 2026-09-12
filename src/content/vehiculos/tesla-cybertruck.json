@@ -38,11 +38,7 @@
     "raw": "USD 79.990 (AWD) a USD 99.990 (Cyberbeast)"
   },
   "consumo": "Autonomía estimada en 523 km (EPA)",
-  "dimensiones": {
-    "largo": "5382 mm",
-    "ancho": "2099 mm",
-    "alto": "1791 mm"
-  },
+  "dimensiones": "5382 mm largo x 2099 mm ancho x 1791 mm alto",
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://es.wikipedia.org/wiki/Tesla_Cybertruck",

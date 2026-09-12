@@ -154,12 +154,7 @@
     "refrigerante": "2 anos"
   },
   "consumo": "15.4 - 18.2 kWh / 100 km (ciclo WLTP)",
-  "dimensiones": {
-    "largo": "4800 mm",
-    "ancho": "1875 mm",
-    "alto": "1460 mm",
-    "distancia_ejes": "2920 mm"
-  },
+  "dimensiones": "4800 mm largo x 1875 mm ancho x 1460 mm alto, distancia entre ejes 2920 mm",
   "cilindrada": null,
   "emisiones": null,
   "asientos": 5,

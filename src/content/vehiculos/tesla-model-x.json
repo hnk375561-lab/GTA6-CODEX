@@ -57,11 +57,7 @@
     "raw": "USD 101.630 (precio base de referencia en mercado norteamericano para 2026)"
   },
   "consumo": "Autonomía estimada WLTP de hasta 649 km (Dual Motor) y 609 km (Plaid)",
-  "dimensiones": {
-    "largo": "5037 mm",
-    "ancho": "2070 mm",
-    "alto": "1674 mm"
-  },
+  "dimensiones": "5037 mm largo x 2070 mm ancho x 1674 mm alto",
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://www.caranddriver.com/tesla/model-x",

@@ -52,11 +52,7 @@
     "raw": "EUR 29.000 (precio de referencia aproximado mercado europeo)"
   },
   "consumo": "16.0 kWh/100km (combinado WLTP referencia)",
-  "dimensiones": {
-    "largo": "4400 mm",
-    "ancho": "1800 mm",
-    "alto": "1550 mm"
-  },
+  "dimensiones": "4400 mm largo x 1800 mm ancho x 1550 mm alto",
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://en.wikipedia.org/wiki/MG4_EV",

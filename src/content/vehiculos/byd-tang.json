@@ -57,12 +57,7 @@
     "raw": "USD 65.000 (referencia mercado europeo)"
   },
   "consumo": "19.3 kWh/100 km (WLTP)",
-  "dimensiones": {
-    "largo": "4950 mm",
-    "ancho": "1950 mm",
-    "alto": "1725 mm",
-    "distancia_ejes": "2950 mm"
-  },
+  "dimensiones": "4950 mm largo x 1950 mm ancho x 1725 mm alto, distancia entre ejes 2950 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/eu/electric-cars/tang",

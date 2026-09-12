@@ -57,12 +57,7 @@
     "raw": "EUR 38.000 (referencia mercado europeo)"
   },
   "consumo": "15.6 kWh/100 km",
-  "dimensiones": {
-    "largo": "4455 mm",
-    "ancho": "1875 mm",
-    "alto": "1615 mm",
-    "distancia_ejes": "2720 mm"
-  },
+  "dimensiones": "4455 mm largo x 1875 mm ancho x 1615 mm alto, distancia entre ejes 2720 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/en/car/atto3",

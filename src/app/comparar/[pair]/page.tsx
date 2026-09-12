@@ -102,7 +102,7 @@ export default async function FixedComparisonPage({ params }: PageProps) {
 
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            {a.title} <span className="text-gradient-vice">vs</span> {b.title}
+            {a.title} <span className="text-gradient-oxide">vs</span> {b.title}
           </h1>
           <p className="mt-2 text-sm text-neutral-500 sm:text-base">
             Comparación lado a lado: precio, rendimiento, consumo, dimensiones y más, con ficha

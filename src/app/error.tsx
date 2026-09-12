@@ -32,7 +32,7 @@ export default function Error({
           <p className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">
             Expediente · Error
           </p>
-          <div className="text-gradient-vice mb-4 font-display text-8xl font-bold sm:text-9xl">
+          <div className="text-gradient-oxide mb-4 font-display text-8xl font-bold sm:text-9xl">
             !
           </div>
           <h1 className="mb-2 text-3xl font-bold text-neutral-900 sm:text-4xl">

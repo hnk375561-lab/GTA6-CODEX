@@ -57,11 +57,7 @@
     "raw": "USD 39.000 (MSRP EE.UU. referencia)"
   },
   "consumo": "16-18 kWh/100 km",
-  "dimensiones": {
-    "largo": "4612 mm",
-    "ancho": "1852 mm",
-    "alto": "1612 mm"
-  },
+  "dimensiones": "4612 mm largo x 1852 mm ancho x 1612 mm alto",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.volkswagen.com",

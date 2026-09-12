@@ -429,6 +429,22 @@ a:not(.no-style) {
   background: linear-gradient(135deg, rgb(var(--color-oxide-red)) 0%, rgb(var(--color-archive-green)) 100%);
 }
 
+/* === TEXT GRADIENT (marca actual) ===
+ * P4-14 (auditoría UX, sept 2026): esta clase reemplaza a
+ * `text-gradient-oxide`, resabio directo del proyecto anterior ("GTA VI" /
+ * "Vice City") que además nunca tuvo una definición CSS real — se usaba
+ * en 13 archivos como texto plano sin gradiente, un defecto visual mudo
+ * en cada H1 que la referenciaba. Usa los mismos dos colores de marca del
+ * logo (`logo-mark` arriba) para quedar consistente con el resto del
+ * sistema de diseño "Archivo".
+ */
+.text-gradient-oxide {
+  background: linear-gradient(135deg, rgb(var(--color-oxide-red)) 0%, rgb(var(--color-archive-green)) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 /* === GLASS SURFACE === */
 .glass-surface {
   background-color: rgba(244, 241, 234, 0.95);

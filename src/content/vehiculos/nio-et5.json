@@ -42,12 +42,7 @@
     "raw": "EUR 48.300 (referencia base mercado europeo)"
   },
   "consumo": "15.5 kWh/100 km",
-  "dimensiones": {
-    "largo": "4790 mm",
-    "ancho": "1960 mm",
-    "alto": "1560 mm",
-    "distancia_ejes": "2900 mm"
-  },
+  "dimensiones": "4790 mm largo x 1960 mm ancho x 1560 mm alto, distancia entre ejes 2900 mm",
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://es.driveduel.de/models/nio/et5-wagon",

@@ -42,11 +42,7 @@
     "raw": "EUR 37.900 (referencia mercado europeo)"
   },
   "consumo": "16.8 kWh/100km combinado",
-  "dimensiones": {
-    "largo": "4270 mm",
-    "ancho": "1850 mm",
-    "alto": "1589 mm"
-  },
+  "dimensiones": "4270 mm largo x 1850 mm ancho x 1589 mm alto",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.carwow.es/smart/smart-1/caracteristicas-tecnicas",

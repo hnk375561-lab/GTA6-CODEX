@@ -36,7 +36,7 @@ export default function FinanciamientoPage() {
       <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Calculadora de <span className="text-gradient-vice">financiamiento</span>
+            Calculadora de <span className="text-gradient-oxide">financiamiento</span>
           </h1>
           <p className="mt-2 text-sm text-neutral-500 sm:text-base">
             Ingresá el precio del vehículo que te interesa (lo ves en su ficha) y simulá la cuota mensual con

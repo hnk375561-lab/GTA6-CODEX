@@ -63,8 +63,20 @@ export function Footer() {
                   Guías de compra
                 </Link>
               </li>
-              {/* Noticias sigue afuera de la navegación (solo 3
-                  artículos hoy) — ver Header.tsx para el criterio. */}
+              {/* P2-11 (auditoría UX, sept 2026): Noticias no aparecía en
+                  ningún punto de navegación pese a tener contenido real
+                  publicado (3 artículos) — solo era alcanzable escribiendo
+                  la URL a mano. No entra al header (sigue reservado a las
+                  6 secciones núcleo), pero un link en el footer alcanza
+                  para que deje de ser un callejón invisible. */}
+              <li>
+                <Link
+                  href={`/${EntityType.NEWS}`}
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
+                >
+                  Noticias
+                </Link>
+              </li>
             </ul>
           </div>
 

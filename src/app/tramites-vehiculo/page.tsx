@@ -37,7 +37,7 @@ export default function TramitesVehiculoPage() {
       <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Trámites de <span className="text-gradient-vice">transferencia y patentamiento</span>
+            Trámites de <span className="text-gradient-oxide">transferencia y patentamiento</span>
           </h1>
           <p className="mt-2 text-sm text-neutral-500 sm:text-base">
             ¿Compraste, vendiste o heredaste un vehículo y necesitás transferirlo, patentarlo o hacer otro

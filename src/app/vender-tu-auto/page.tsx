@@ -37,7 +37,7 @@ export default function VenderTuAutoPage() {
             Vendé o entregá tu usado
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            ¿Querés vender tu auto o moto? <span className="text-gradient-vice">Contanos y te contactamos</span>
+            ¿Querés vender tu auto o moto? <span className="text-gradient-oxide">Contanos y te contactamos</span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base">
             Dejá los datos de tu vehículo y las concesionarias interesadas en comprarlo (o tomarlo como parte de

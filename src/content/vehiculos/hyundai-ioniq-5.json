@@ -57,11 +57,7 @@
     "raw": "USD 43.000 (referencia base mercado internacional)"
   },
   "consumo": "16.8 kWh/100 km (equivalente combinado)",
-  "dimensiones": {
-    "largo": "4635 mm",
-    "ancho": "1890 mm",
-    "alto": "1595 mm"
-  },
+  "dimensiones": "4635 mm largo x 1890 mm ancho x 1595 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.hyundai.com/worldwide/en/eco/ioniq5/performance",

@@ -94,7 +94,7 @@ export default function DirectorioConcepcionDelUruguayPage() {
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
             Concesionarias, talleres y seguros en{' '}
-            <span className="text-gradient-vice">Concepción del Uruguay</span>
+            <span className="text-gradient-oxide">Concepción del Uruguay</span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base">
             El directorio de negocios automotores de la ciudad — concesionarias, talleres, seguros, repuestos,

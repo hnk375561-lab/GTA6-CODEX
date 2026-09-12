@@ -54,7 +54,7 @@ export default function AnunciatePage() {
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
             Anunciá tu concesionaria, taller o seguro en{' '}
-            <span className="text-gradient-vice">{SITE_NAME}</span>
+            <span className="text-gradient-oxide">{SITE_NAME}</span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base">
             {audiencia.resumen} {audiencia.intencion}

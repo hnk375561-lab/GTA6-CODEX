@@ -52,12 +52,7 @@
     "raw": "USD 45.000 (precio de referencia en mercado de origen)"
   },
   "consumo": "15-18 kWh/100km",
-  "dimensiones": {
-    "largo": "4785 mm",
-    "ancho": "1875 mm",
-    "alto": "1600 mm",
-    "distancia_ejes": "2915 mm"
-  },
+  "dimensiones": "4785 mm largo x 1875 mm ancho x 1600 mm alto, distancia entre ejes 2915 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/us/car/han-ev",

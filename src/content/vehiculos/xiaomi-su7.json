@@ -42,12 +42,7 @@
     "raw": "Desde aprox. € 28.500 / USD 30.000 (precio base de referencia en el mercado chino)"
   },
   "consumo": "13.7 kWh/100 km (referencia WLTP/CLTC según versión)",
-  "dimensiones": {
-    "largo": "4997 mm",
-    "ancho": "1963 mm",
-    "alto": "1440 mm",
-    "distancia_ejes": "3000 mm"
-  },
+  "dimensiones": "4997 mm largo x 1963 mm ancho x 1440 mm alto, distancia entre ejes 3000 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.arenaev.com/xiaomi_su7_su7_2024-specs-573.php",

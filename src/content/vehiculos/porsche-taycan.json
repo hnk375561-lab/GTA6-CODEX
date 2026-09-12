@@ -32,11 +32,7 @@
     "raw": "USD 99.000 (MSRP base referencia)"
   },
   "consumo": "18-22 kWh/100 km (equivalente eléctrico)",
-  "dimensiones": {
-    "largo": "4963 mm",
-    "ancho": "1964 mm",
-    "alto": "1395 mm"
-  },
+  "dimensiones": "4963 mm largo x 1964 mm ancho x 1395 mm alto",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.porsche.com",

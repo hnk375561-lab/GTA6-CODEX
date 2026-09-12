@@ -37,7 +37,7 @@ export default async function FavoritosPage() {
       <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Tus <span className="text-gradient-vice">favoritos</span>
+            Tus <span className="text-gradient-oxide">favoritos</span>
           </h1>
           <p className="mt-2 text-sm text-neutral-500 sm:text-base">
             Guardado solo en este navegador — tocá el corazón en cualquier ficha para agregarla.

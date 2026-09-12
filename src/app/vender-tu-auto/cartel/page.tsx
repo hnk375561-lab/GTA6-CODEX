@@ -35,7 +35,7 @@ export default function CartelVentaPage() {
             Cartel de venta
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Un cartel prolijo <span className="text-gradient-vice">vende más rápido</span>
+            Un cartel prolijo <span className="text-gradient-oxide">vende más rápido</span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base">
             Completá los datos de tu vehículo y generá un PDF con el precio bien grande, tu contacto y el diseño

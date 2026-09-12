@@ -58,7 +58,7 @@ export default async function CompararPage() {
       <Reveal direction="chapter">
         <div className="mb-8 max-w-2xl">
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Comparar <span className="text-gradient-vice">vehículos</span>
+            Comparar <span className="text-gradient-oxide">vehículos</span>
           </h1>
           <p className="mt-2 text-sm text-neutral-500 sm:text-base">
             Elegí hasta 5 autos o motos y compará fabricante, clase, rendimiento y más, lado a

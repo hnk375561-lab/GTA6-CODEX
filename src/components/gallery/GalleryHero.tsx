@@ -33,7 +33,7 @@ export function GalleryHero({ total, categoryCount }: GalleryHeroProps) {
             Archivo visual
           </p>
           <h1 className="max-w-2xl text-4xl font-bold tracking-tightest text-neutral-900 sm:text-6xl">
-            Galería <span className="text-gradient-vice">de autos</span>
+            Galería <span className="text-gradient-oxide">de autos</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-neutral-500 sm:text-lg">
             Fotografía de stock y propia de autos y motos, organizada por marca y modelo — cada

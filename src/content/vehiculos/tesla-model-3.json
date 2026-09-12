@@ -65,12 +65,7 @@
     "raw": "Desde 33.365 € hasta 57.490 € (PVP referencia España y mercado europeo)"
   },
   "consumo": "13,0 kWh/100 km (Ciclo WLTP oficial)",
-  "dimensiones": {
-    "largo": "4719 mm",
-    "ancho": "1849 mm",
-    "alto": "1440 mm",
-    "distancia_ejes": "2875 mm"
-  },
+  "dimensiones": "4719 mm largo x 1849 mm ancho x 1440 mm alto, distancia entre ejes 2875 mm",
   "evidence": {
     "level": "respaldado",
     "secondarySource": "https://www.diariomotor.com/coche/tesla-model-3",

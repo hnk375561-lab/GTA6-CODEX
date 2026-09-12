@@ -58,11 +58,7 @@
     "raw": "MSRP inicial desde USD 29.990 (EE.UU.)"
   },
   "consumo": "17 kWh/100km",
-  "dimensiones": {
-    "largo": "4480 mm",
-    "ancho": "1790 mm",
-    "alto": "1540 mm"
-  },
+  "dimensiones": "4480 mm largo x 1790 mm ancho x 1540 mm alto",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://es.nissanusa.com/vehicles/electric-cars/leaf/specs-trims.html",

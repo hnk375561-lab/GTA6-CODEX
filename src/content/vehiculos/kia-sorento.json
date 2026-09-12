@@ -58,12 +58,7 @@
     "raw": "USD 32.390 (MSRP base sin destino) hasta USD 49.285 (tope de gama X-Pro SX Prestige AWD con destino)"
   },
   "consumo": "26 MPG combinado (LX FWD) a 23 MPG combinado (trims turbo AWD)",
-  "dimensiones": {
-    "largo": "4810 mm",
-    "ancho": "1900 mm",
-    "alto": "1700 mm",
-    "distancia_ejes": "2810 mm"
-  },
+  "dimensiones": "4810 mm largo x 1900 mm ancho x 1700 mm alto, distancia entre ejes 2810 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.kia.com/us/en/sorento",

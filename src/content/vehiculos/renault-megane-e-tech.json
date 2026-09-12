@@ -57,11 +57,7 @@
     "raw": "EUR 39.000 (referencia mercado europeo)"
   },
   "consumo": "15.5 kWh/100 km (combinado)",
-  "dimensiones": {
-    "largo": "4405 mm",
-    "ancho": "1848 mm",
-    "alto": "1550 mm"
-  },
+  "dimensiones": "4405 mm largo x 1848 mm ancho x 1550 mm alto",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.renault.com",

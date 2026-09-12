@@ -57,12 +57,7 @@
     "raw": "USD 17.000 (referencia regional)"
   },
   "consumo": "Aprox. 11-12 kWh/100 km",
-  "dimensiones": {
-    "largo": "4070 mm",
-    "ancho": "1770 mm",
-    "alto": "1570 mm",
-    "distancia_ejes": "2700 mm"
-  },
+  "dimensiones": "4070 mm largo x 1770 mm ancho x 1570 mm alto, distancia entre ejes 2700 mm",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.byd.com/ar/car/dolphin-mini",

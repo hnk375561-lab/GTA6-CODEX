@@ -21,12 +21,7 @@
     "raw": "USD 4.500 - USD 5.500 (referencia mercado chino base) / aprox. USD 8.500 en otros mercados de importación"
   },
   "consumo": "Aprox. 9-10 kWh / 100 km",
-  "dimensiones": {
-    "largo": "2920 mm",
-    "ancho": "1493 mm",
-    "alto": "1621 mm",
-    "distancia_ejes": "1940 mm"
-  },
+  "dimensiones": "2920 mm largo x 1493 mm ancho x 1621 mm alto, distancia entre ejes 1940 mm",
   "evidence": {
     "level": "respaldado",
     "primarySource": "https://www.ev-electron.com/producto/wuling-honggung-mini-ev",

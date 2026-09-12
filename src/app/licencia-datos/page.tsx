@@ -61,7 +61,7 @@ export default function LicenciaDatosPage() {
             Para desarrolladores y empresas del rubro
           </p>
           <h1 className="font-display text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Licenciá nuestra <span className="text-gradient-vice">base de datos de vehículos</span>
+            Licenciá nuestra <span className="text-gradient-oxide">base de datos de vehículos</span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base">
             {mediaKitData.trafico.fichasPublicadas} fichas técnicas de {mediaKitData.trafico.fichasPublicadas ? '75+' : ''} fabricantes, cada

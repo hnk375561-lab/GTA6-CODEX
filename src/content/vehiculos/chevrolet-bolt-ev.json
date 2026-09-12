@@ -157,11 +157,7 @@
     "refrigerante": "2 anos"
   },
   "consumo": "16 kWh / 100 km",
-  "dimensiones": {
-    "largo": "4163 mm",
-    "ancho": "1769 mm",
-    "alto": "1533 mm"
-  },
+  "dimensiones": "4163 mm largo x 1769 mm ancho x 1533 mm alto",
   "cilindrada": null,
   "emisiones": null,
   "asientos": 5,

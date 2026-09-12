@@ -60,11 +60,7 @@
     "raw": "USD 39.445 (Light RWD) a USD 54.545 (GT-Line AWD), MSRP EE.UU. 2026 sin destino ni cargos de concesionario"
   },
   "consumo": "115 MPGe combinado (Light RWD, más eficiente) a 97 MPGe combinado (GT-Line AWD con rines de 20\"), estimación EPA",
-  "dimensiones": {
-    "largo": "4680 mm",
-    "ancho": "1890 mm",
-    "alto": "1550 mm"
-  },
+  "dimensiones": "4680 mm largo x 1890 mm ancho x 1550 mm alto",
   "evidence": {
     "level": "oficial-nombrado",
     "primarySource": "https://www.kia.com/us/en/ev6",
