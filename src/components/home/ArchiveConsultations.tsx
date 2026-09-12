@@ -55,7 +55,7 @@ export function ArchiveConsultations({ items }: ArchiveConsultationsProps) {
 
             return (
               <Reveal key={item.question} delay={index * 50}>
-                <div className="bg-white border border-border">
+                <div className="bg-surface-card border border-border">
                   <button
                     id={buttonId}
                     type="button"

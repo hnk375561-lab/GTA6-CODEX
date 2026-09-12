@@ -57,7 +57,7 @@ export function FeaturedDossiers({ vehicles }: FeaturedDossiersProps) {
                 key={vehicle.slug}
                 href={`/vehiculos/${vehicle.slug}`}
                 prefetch={false}
-                className="group/dossier relative bg-white border border-border overflow-hidden hover:border-oxide-red/50 transition-all duration-200"
+                className="group/dossier relative bg-surface-card border border-border overflow-hidden hover:border-oxide-red/50 transition-all duration-200"
                 style={{
                   animationDelay: `${index * 60}ms`,
                 }}

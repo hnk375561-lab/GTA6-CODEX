@@ -23,8 +23,8 @@ export function Footer() {
           {/* About */}
           <div>
             <div className="mb-4 flex items-center gap-2.5">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-auto-accent to-auto-accent-orange">
-                <span className="font-display text-[10px] font-bold text-auto-darker">{SITE_NAME.charAt(0)}</span>
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-oxide-red">
+                <span className="font-display text-[10px] font-bold text-white">{SITE_NAME.charAt(0)}</span>
               </div>
               <h3 className="font-display text-lg font-semibold text-auto-text">{SITE_NAME}</h3>
             </div>
@@ -37,12 +37,12 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">Categorías</h3>
+            <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-oxide-red">Categorías</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${EntityType.VEHICLE}`}
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Vehículos
                 </Link>
@@ -50,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`/${EntityType.MANUFACTURER}`}
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Fabricantes
                 </Link>
@@ -58,7 +58,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`/${EntityType.GUIDE}`}
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Guías de compra
                 </Link>
@@ -70,12 +70,12 @@ export function Footer() {
 
           {/* Secciones */}
           <div>
-            <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-auto-accent-strong">Secciones</h3>
+            <h3 className="eyebrow mb-4 text-xs font-semibold uppercase text-oxide-red">Secciones</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/buscar"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Búsqueda
                 </Link>
@@ -83,7 +83,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/galeria"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Galería
                 </Link>
@@ -91,7 +91,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/comparar"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Comparar
                 </Link>
@@ -99,7 +99,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/mapa"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Mapa
                 </Link>
@@ -107,7 +107,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/favoritos"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Favoritos
                 </Link>
@@ -115,7 +115,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/financiamiento"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Financiamiento
                 </Link>
@@ -123,7 +123,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/vender-tu-auto"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Vendé tu auto
                 </Link>
@@ -131,7 +131,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/tramites-vehiculo"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Trámites (transferencia/patentamiento)
                 </Link>
@@ -139,7 +139,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/anunciate"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Anunciate acá
                 </Link>
@@ -147,7 +147,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/licencia-datos"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Licencia de datos (B2B)
                 </Link>
@@ -155,7 +155,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/concesionarias-concepcion-del-uruguay"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Directorio Concepción del Uruguay
                 </Link>
@@ -163,7 +163,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacidad"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Privacidad
                 </Link>
@@ -171,7 +171,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/terminos"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Términos de Uso
                 </Link>
@@ -179,7 +179,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:uruspotcdu@gmail.com"
-                  className="link-underline text-neutral-500 transition-colors hover:text-auto-accent-strong"
+                  className="link-underline text-neutral-500 transition-colors hover:text-oxide-red"
                 >
                   Contacto
                 </a>
@@ -198,7 +198,7 @@ export function Footer() {
             type="button"
             onClick={() => smoothScrollTo(0)}
             aria-label="Volver arriba"
-            className="tap-scale inline-flex items-center gap-2 rounded-full border border-auto-border/60 bg-auto-surface/40 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-auto-accent/60 hover:bg-auto-surface hover:text-auto-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="tap-scale inline-flex items-center gap-2 rounded-full border border-auto-border/60 bg-auto-surface/40 px-4 py-2.5 text-xs font-medium text-neutral-400 transition-colors hover:border-oxide-red/60 hover:bg-auto-surface hover:text-oxide-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
           >
             <svg
               width="14"

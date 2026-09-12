@@ -364,7 +364,7 @@ export function EntityCard({
         <Link href={`/${entity.type}/${entity.slug}`} prefetch={false} className="block h-full">
           <article
             className={cn(
-              'group/card relative flex h-full w-full overflow-hidden bg-white border border-border transition-all duration-300',
+              'group/card relative flex h-full w-full overflow-hidden bg-surface-card border border-border transition-all duration-300',
               'hover:border-oxide-red/50 hover:shadow-md'
             )}
           >

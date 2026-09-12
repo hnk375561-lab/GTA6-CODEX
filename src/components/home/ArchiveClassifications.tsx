@@ -102,7 +102,7 @@ export function ArchiveClassifications({ classifications }: ArchiveClassificatio
 
         {/* Tabla de clasificación */}
         <div
-          className="max-w-2xl mx-auto bg-white border border-border"
+          className="max-w-2xl mx-auto bg-surface-card border border-border"
           style={{
             opacity: fadingOut ? 0 : 1,
             transition: 'opacity 220ms ease-in-out',
