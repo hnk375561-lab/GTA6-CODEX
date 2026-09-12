@@ -96,14 +96,18 @@ if (!cssDir) {
   // (token `auto-card` eliminado del theme en la Fase 6 del rediseño — ver
   // tailwind.config.js) y `.shadow-auto-sm` (ningún archivo de src/* la
   // referencia; las boxShadow custom `auto-*`/`glow-*` no tienen consumo
-  // por clase). Se sumaron en su lugar `.bg-auto-surface` y `.bg-auto-accent`,
-  // las dos con uso real verificable en el CSS compilado (dashboard y
-  // componentes distribuidos respectivamente).
+  // por clase).
+  //
+  // Reconciliación (12/9/2026): se quitaron también `.bg-auto-surface` y
+  // `.border-auto-border` — el/los componente(s) que las usaban (bloque de
+  // dashboard) se borraron en la limpieza de código muerto (Fase 2) y hoy
+  // ningún archivo de src/* las referencia (confirmado con grep -rn en todo
+  // src/). Tailwind no emite CSS para clases sin uso literal en el código
+  // escaneado, así que exigirlas acá era un falso positivo permanente: no
+  // hay ningún elemento perdiendo estilo, solo un assert desactualizado.
   const expectedClasses = [
-    '.bg-auto-surface',
     '.text-auto-text',
     '.text-auto-text-secondary',
-    '.border-auto-border',
     '.text-auto-accent',
     '.bg-auto-accent',
     '.rounded-lg',
