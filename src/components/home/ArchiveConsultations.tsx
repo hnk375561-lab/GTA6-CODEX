@@ -55,7 +55,10 @@ export function ArchiveConsultations({ items }: ArchiveConsultationsProps) {
 
             return (
               <Reveal key={item.question} delay={index * 50}>
-                <div className="bg-surface-card border border-border">
+                <div className={cn(
+                  'bg-surface-card border border-border transition-shadow duration-200',
+                  open ? 'shadow-md' : 'hover:shadow-sm'
+                )}>
                   <button
                     id={buttonId}
                     type="button"

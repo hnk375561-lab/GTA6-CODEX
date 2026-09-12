@@ -66,7 +66,7 @@ export function ManufacturerArchive({ vehicles }: ManufacturerArchiveProps) {
                 key={manufacturer}
                 href={`/fabricantes#${manufacturer.toLowerCase().replace(/\s+/g, '-')}`}
                 prefetch={false}
-                className="group/manufacturer relative bg-surface-card border border-border p-5 hover:border-archive-green/50 transition-all duration-200"
+                className="paper-fold group/manufacturer relative bg-surface-card border border-border p-5 transition-[border-color,box-shadow,transform] duration-200 hover:border-archive-green/50 hover:shadow-lg hover:[transform:translateY(-3px)_rotate(-0.3deg)]"
                 style={{
                   animationDelay: `${index * 50}ms`,
                 }}

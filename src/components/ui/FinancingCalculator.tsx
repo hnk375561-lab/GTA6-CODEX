@@ -46,7 +46,7 @@ function ResultRow({ label, value, emphasis }: { label: string; value: string; e
       <dd
         className={cn(
           'font-mono tabular-nums text-neutral-900',
-          emphasis ? 'text-lg font-bold text-auto-accent-strong' : 'text-sm font-medium'
+          emphasis ? 'text-lg font-bold text-oxide-red' : 'text-sm font-medium'
         )}
       >
         {value}
@@ -145,7 +145,7 @@ export function FinancingCalculator() {
             <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-wide text-neutral-400">
               Precio del vehículo
             </span>
-            <div className="flex overflow-hidden rounded-lg border border-edge focus-within:border-auto-accent">
+            <div className="flex overflow-hidden rounded-sm border border-edge focus-within:border-oxide-red">
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
@@ -178,7 +178,7 @@ export function FinancingCalculator() {
               inputMode="decimal"
               value={annualRatePercent}
               onChange={(e) => setAnnualRatePercent(e.target.value)}
-              className="w-full rounded-lg border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-auto-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+              className="w-full rounded-sm border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-oxide-red focus:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
               placeholder="12"
             />
           </label>
@@ -195,7 +195,7 @@ export function FinancingCalculator() {
               step={5}
               value={downPaymentPercent}
               onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
-              className="w-full accent-auto-accent"
+              className="w-full accent-oxide-red"
             />
           </label>
 
@@ -206,7 +206,7 @@ export function FinancingCalculator() {
             <select
               value={termMonths}
               onChange={(e) => setTermMonths(Number(e.target.value))}
-              className="w-full rounded-lg border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-auto-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+              className="w-full rounded-sm border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-oxide-red focus:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
             >
               {TERM_OPTIONS.map((m) => (
                 <option key={m} value={m}>
@@ -232,7 +232,7 @@ export function FinancingCalculator() {
         )}
 
         {result && (
-          <div className="space-y-3 rounded-lg border border-edge bg-surface-card/50 p-4">
+          <div className="space-y-3 rounded-sm border border-edge bg-surface-card/50 p-4">
             <p className="font-mono text-[10px] uppercase tracking-wide text-neutral-400">
               ¿Querés ayuda para conseguir esta financiación?
             </p>
@@ -247,7 +247,7 @@ export function FinancingCalculator() {
                 onChange={(e) => setLeadName(e.target.value)}
                 placeholder="Tu nombre"
                 aria-label="Tu nombre"
-                className="w-full rounded-lg border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-auto-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-full rounded-sm border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-oxide-red focus:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
               />
               <input
                 type="tel"
@@ -255,7 +255,7 @@ export function FinancingCalculator() {
                 onChange={(e) => setLeadPhone(e.target.value)}
                 placeholder="Tu WhatsApp (ej. 3445123456)"
                 aria-label="Tu WhatsApp"
-                className="w-full rounded-lg border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-auto-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-full rounded-sm border border-edge bg-surface-card px-3 py-2 text-sm text-neutral-900 transition duration-200 focus:border-oxide-red focus:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
               />
             </div>
             {leadReady && whatsappUrl ? (
@@ -264,7 +264,7 @@ export function FinancingCalculator() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleLeadSubmit}
-                className="inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-medium text-white transition duration-200 hover:bg-emerald-700 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-1 sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-sm bg-emerald-600 px-4 py-2.5 text-sm font-medium text-white transition duration-200 hover:bg-emerald-700 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-1 sm:w-auto"
               >
                 Enviar por WhatsApp
                 <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">

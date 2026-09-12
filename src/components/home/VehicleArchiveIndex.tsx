@@ -81,7 +81,7 @@ export function VehicleArchiveIndex({ vehicles }: VehicleArchiveIndexProps) {
                       key={vehicle.slug}
                       href={`/vehiculos/${vehicle.slug}`}
                       prefetch={false}
-                      className="group/vehicle relative bg-surface-card border border-border p-4 hover:border-oxide-red/50 transition-colors duration-200"
+                      className="paper-fold lift-on-hover group/vehicle relative bg-surface-card border border-border p-4 hover:border-oxide-red/50 transition-colors duration-200"
                     >
                       {/* Identificador de ficha */}
                       <div className="flex items-center justify-between mb-3">

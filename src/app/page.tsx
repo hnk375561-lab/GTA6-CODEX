@@ -223,8 +223,9 @@ export default async function Home() {
         <ArchiveConsultations items={consultationItems} />
 
         {/* ============= CIERRE DEL ARCHIVO ============= */}
-        <section className="py-16 sm:py-24 lg:py-32 bg-paper border-t border-border">
-          <div className="container-max">
+        <section className="relative overflow-hidden py-16 sm:py-24 lg:py-32 bg-paper border-t border-border">
+          <div className="paper-texture absolute inset-0 opacity-[0.035]" aria-hidden="true" />
+          <div className="container-max relative">
             <Reveal className="max-w-2xl mx-auto text-center">
               <div className="space-y-8">
                 <div>
@@ -243,7 +244,7 @@ export default async function Home() {
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link
                     href="/vehiculos"
-                    className="font-mono text-xs uppercase tracking-[0.15em] bg-oxide-red text-white px-8 py-4 hover:bg-ink transition-colors duration-200"
+                    className="cta-shine font-mono text-xs uppercase tracking-[0.15em] bg-oxide-red text-white px-8 py-4 hover:bg-ink transition-colors duration-200"
                   >
                     Explorar archivo
                   </Link>

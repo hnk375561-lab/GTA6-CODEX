@@ -89,20 +89,26 @@ export function ArchiveClassifications({ classifications }: ArchiveClassificatio
               type="button"
               onClick={() => selectTab(i)}
               className={cn(
-                'font-mono text-xs uppercase tracking-[0.15em] px-4 py-2 border transition-colors',
+                'relative font-mono text-xs uppercase tracking-[0.15em] px-4 py-2 border transition-colors',
                 i === activeIndex
                   ? 'border-oxide-red bg-oxide-red/5 text-ink'
                   : 'border-border text-ink/60 hover:border-ink/30 hover:text-ink'
               )}
             >
               {c.shortTitle}
+              {i === activeIndex && (
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-[5px] left-1/2 h-[3px] w-3 -translate-x-1/2 bg-oxide-red"
+                />
+              )}
             </button>
           ))}
         </div>
 
         {/* Tabla de clasificación */}
         <div
-          className="max-w-2xl mx-auto bg-surface-card border border-border"
+          className="max-w-2xl mx-auto bg-surface-card border border-border shadow-md"
           style={{
             opacity: fadingOut ? 0 : 1,
             transition: 'opacity 220ms ease-in-out',

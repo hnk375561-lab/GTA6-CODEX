@@ -123,7 +123,7 @@ export function QuickSearchForm({ examples = DEFAULT_EXAMPLES }: QuickSearchForm
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
         aria-label={`Búsqueda rápida en ${SITE_NAME}. Atajo: tecla oblicua`}
-        className="w-full rounded-xl border border-border bg-surface-input py-3.5 pl-11 pr-24 text-sm text-ink shadow-sm placeholder:text-ink/40 transition focus:border-oxide-red focus:outline-none focus:ring-2 focus:ring-oxide-red/10 sm:text-base"
+        className="w-full rounded-sm border border-border bg-surface-input py-3.5 pl-11 pr-24 text-sm text-ink shadow-sm placeholder:text-ink/40 transition focus:border-oxide-red focus:outline-none focus:ring-2 focus:ring-oxide-red/10 sm:text-base"
       />
       {/* Indicador del atajo de teclado: se oculta solo mientras el input
           tiene contenido o foco (empty-values / has-[:focus]), y en mobile
@@ -132,13 +132,13 @@ export function QuickSearchForm({ examples = DEFAULT_EXAMPLES }: QuickSearchForm
           en momentos distintos. */}
       <kbd
         aria-hidden="true"
-        className="hero-search-kbd-hint pointer-events-none absolute right-20 top-1/2 hidden -translate-y-1/2 items-center rounded-md border border-border px-1.5 py-1 font-mono text-xs text-ink/40 sm:flex"
+        className="hero-search-kbd-hint pointer-events-none absolute right-20 top-1/2 hidden -translate-y-1/2 items-center rounded-sm border border-border px-1.5 py-1 font-mono text-xs text-ink/40 sm:flex"
       >
         /
       </kbd>
       <button
         type="submit"
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-oxide-red px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-[background-color,transform] duration-200 ease-out hover:bg-oxide-red/85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red focus-visible:ring-offset-2 sm:text-sm"
+        className="cta-shine absolute right-2 top-1/2 -translate-y-1/2 rounded-sm bg-oxide-red px-3.5 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-[background-color,transform] duration-200 ease-out hover:bg-oxide-red/85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red focus-visible:ring-offset-2 sm:text-sm"
       >
         Buscar
       </button>

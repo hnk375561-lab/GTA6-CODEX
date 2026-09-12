@@ -10,13 +10,13 @@ interface CardProps {
 
 export function Card({ children, className = '', hoverable = false }: CardProps) {
   const hoverClass = hoverable
-    ? 'group/card hover:border-auto-accent/60 hover:shadow-auto-lg hover:-translate-y-1 transition duration-250'
+    ? 'group/card hover:border-oxide-red/60 hover:shadow-lg hover:-translate-y-1 transition duration-250'
     : 'transition-colors duration-300'
 
   return (
     <div
       className={`
-        rounded-lg border border-edge/40 bg-surface-card shadow-auto-sm overflow-hidden flex flex-col
+        rounded-lg border border-edge/40 bg-surface-card shadow-sm overflow-hidden flex flex-col
         ${hoverClass}
         ${className}
       `}
