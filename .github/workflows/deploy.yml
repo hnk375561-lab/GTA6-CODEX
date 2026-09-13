@@ -13,6 +13,13 @@ name: CI (type-check, lint, test, build)
 # de Cloudflare sigue mostrando builds (fallidos o no) en cada push,
 # desactivar esa integración en Workers & Pages → sinfrenos → Settings →
 # Builds, ya que el sitio en producción ahora es GitHub Pages.
+#
+# 12/09/2026 — FASE 1 SUPABASE: se cambió `npm ci` por `npm install` en
+# el paso de instalación (mismo motivo que en deploy-pages.yml: el
+# proyecto se edita 100% desde la web de GitHub, sin terminal local para
+# regenerar package-lock.json antes de cada commit, así que `npm ci`
+# rompía con "package.json y package-lock.json no están sincronizados"
+# apenas se agregaba una dependencia nueva a mano).
 
 on:
   push:
@@ -46,7 +53,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run type check
         run: npm run type-check
@@ -109,3 +116,8 @@ jobs:
         env:
           GITHUB_PAGES_BASE_PATH: '/Sin-Frenos'
           NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/Sin-Frenos
+          # FASE 1 SUPABASE: si falta esto, `next build` revienta apenas
+          # una página importe src/lib/supabase/client.ts, porque ese
+          # archivo lanza un throw explícito si estas dos vars no están.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
