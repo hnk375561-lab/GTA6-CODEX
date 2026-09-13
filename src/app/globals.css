@@ -587,6 +587,32 @@ a:not(.no-style) {
   box-shadow: 0 1px 0 1px rgb(var(--color-edge-strong));
 }
 
+/* === HOOKS DE FORMA SIN CSS DETRÁS (Pase 3 de auditoría, extensión de [2.1]) ===
+ * Mismo bug que `card-media-*`/`entity-card-viewport`, encontrado al hacer
+ * el pulido de forma de [4.1]: dos clases más usadas como "hook" en JSX
+ * (7 archivos para la primera) sin ninguna regla CSS detrás.
+ */
+
+/* Halo del ícono de categoría en accesos rápidos (buscador vacío,
+   /vehiculos, /fabricantes, /categorias...). El nombre "badge" prometía
+   un fondo + borde propios; hasta ahora dependía 100% de que cada caller
+   pusiera `text-auto-accent` y nada más — un ícono suelto sin marco. No
+   se toca el radio acá (cada caller usa un tamaño de esquina distinto,
+   rounded-sm/lg/xl según el tamaño del ícono) para no pisar esas 7
+   variantes ya afinadas por caller. */
+.category-icon-badge {
+  background-color: rgba(var(--color-oxide-red), 0.08);
+  border: 1px solid rgba(var(--color-oxide-red), 0.18);
+}
+
+/* Misma optimización que `.entity-card-viewport` (ver arriba), aplicada
+   a las filas de `/buscar`: hasta 30 filas pueden montarse por búsqueda,
+   la mayoría fuera de pantalla. */
+.search-result-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 92px;
+}
+
 /* === GUTTER WIDTH === */
 @media (max-width: 640px) {
   :root {

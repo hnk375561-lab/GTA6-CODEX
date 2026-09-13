@@ -11,9 +11,9 @@ export default function Loading() {
     <div className="container-max py-16" role="status">
       <span className="sr-only">Buscando…</span>
       <div className="mx-auto max-w-xl">
-        <Skeleton className="h-12 w-full rounded-xl" />
+        <Skeleton className="h-12 w-full rounded-sm" />
       </div>
-      <div className="mx-auto mt-6 max-w-3xl divide-y divide-edge rounded-xl border border-edge bg-surface-card px-3">
+      <div className="mx-auto mt-6 max-w-3xl divide-y divide-edge rounded-sm border border-edge bg-surface-card px-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <SearchRowSkeleton key={i} />
         ))}

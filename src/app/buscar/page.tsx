@@ -99,8 +99,8 @@ export default async function SearchPage() {
             <div role="status">
               <span className="sr-only">Buscando…</span>
               <div className="mx-auto max-w-xl">
-                <Skeleton className="h-12 w-full rounded-xl" />
-                <div className="mt-6 divide-y divide-edge rounded-xl border border-edge bg-surface-card px-3">
+                <Skeleton className="h-12 w-full rounded-sm" />
+                <div className="mt-6 divide-y divide-edge rounded-sm border border-edge bg-surface-card px-3">
                   {Array.from({ length: 6 }).map((_, i) => (
                     <SearchRowSkeleton key={i} />
                   ))}

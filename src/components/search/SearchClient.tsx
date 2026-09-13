@@ -283,7 +283,7 @@ export function SearchClient({ counts }: SearchClientProps) {
           placeholder="Buscar autos, motos, marcas..."
           autoFocus
           aria-label={`Buscar en ${SITE_NAME}`}
-          className="glass-surface w-full rounded-xl border border-edge py-4 pl-12 pr-12 text-lg text-ink placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+          className="w-full rounded-sm border border-edge bg-surface-input py-4 pl-12 pr-12 text-lg text-ink placeholder:text-neutral-400 transition focus:border-oxide-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
         />
         {query && (
           <button
@@ -309,9 +309,9 @@ export function SearchClient({ counts }: SearchClientProps) {
               <Link
                 key={type}
                 href={`/${type}`}
-                className="group flex items-center gap-3 rounded-lg border border-edge bg-surface-card/60 px-4 py-3.5 transition-colors hover:border-auto-accent/50 hover:bg-surface-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="group flex items-center gap-3 rounded-sm border border-edge bg-surface-card/60 px-4 py-3.5 transition-colors hover:border-auto-accent/50 hover:bg-surface-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               >
-                <div className="category-icon-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-auto-accent">
+                <div className="category-icon-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-sm text-auto-accent">
                   <CategoryIcon type={type} className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
@@ -332,7 +332,7 @@ export function SearchClient({ counts }: SearchClientProps) {
               onClick={() => setActiveType('todos')}
               aria-pressed={activeType === 'todos'}
               className={cn(
-                'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                'rounded-sm border px-3 py-1.5 font-mono text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                 activeType === 'todos'
                   ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                   : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -347,7 +347,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                 onClick={() => setActiveType(type)}
                 aria-pressed={activeType === type}
                 className={cn(
-                  'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                  'rounded-sm border px-3 py-1.5 font-mono text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   activeType === type
                     ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                     : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -360,12 +360,12 @@ export function SearchClient({ counts }: SearchClientProps) {
 
           <div className="mb-5 flex flex-wrap items-center gap-3">
             <label className="flex items-center gap-2 text-xs text-neutral-500">
-              <span className="hidden uppercase tracking-wide text-neutral-400 sm:inline">Orden</span>
+              <span className="eyebrow hidden text-neutral-400 sm:inline">Orden</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 aria-label="Ordenar resultados"
-                className="rounded-lg border border-edge bg-surface-card/60 px-3 py-2 text-xs font-semibold text-neutral-900 transition-colors hover:border-edge-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="rounded-sm border border-edge bg-surface-card/60 px-3 py-2 text-xs font-semibold text-neutral-900 transition-colors hover:border-edge-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               >
                 {sortOptions.map((option) => (
                   <option key={option} value={option} className="bg-surface-card text-neutral-900">
@@ -383,7 +383,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                   onClick={() => setStatus(key)}
                   aria-pressed={status === key}
                   className={cn(
-                    'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                    'rounded-sm border px-3 py-1.5 font-mono text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                     status === key
                       ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                       : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -397,7 +397,7 @@ export function SearchClient({ counts }: SearchClientProps) {
 
           {tagOptions.length > 0 && (
             <div className="mb-5 flex flex-wrap items-center gap-2" role="group" aria-label="Filtrar por tag">
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+              <span className="eyebrow text-[11px] font-semibold text-neutral-400">
                 Tags
               </span>
               {tagOptions.map(({ tag, count }) => (
@@ -407,7 +407,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                   onClick={() => toggleTag(tag)}
                   aria-pressed={selectedTags.includes(tag)}
                   className={cn(
-                    'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                    'rounded-sm border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                     selectedTags.includes(tag)
                       ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                       : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -421,7 +421,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                 <button
                   type="button"
                   onClick={clearAttributeFilters}
-                  className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                  className="ml-1 flex items-center gap-1 rounded-sm border border-transparent px-3 py-1 text-[11px] font-semibold text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -455,7 +455,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                   <Link
                     href={`/${entity.type}/${entity.slug}`}
                     prefetch={false}
-                    className="search-result-viewport group -mx-3 flex items-start gap-4 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-auto-darker/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent active:bg-auto-darker/60"
+                    className="search-result-viewport group -mx-3 flex items-start gap-4 rounded-sm px-3 py-4 transition-colors duration-200 hover:bg-auto-darker/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent active:bg-auto-darker/60"
                   >
                     <EntityImage
                       entity={entity}
@@ -465,7 +465,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                     />
                     <div className="min-w-0 flex-1">
                       <div className="mb-1 flex flex-wrap items-center gap-x-2 gap-y-1">
-                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+                        <span className="eyebrow inline-flex items-center gap-1 text-[11px] font-semibold text-neutral-400">
                           <CategoryIcon type={entity.type} className="h-3 w-3" />
                           {TYPE_LABELS[entity.type]}
                         </span>
@@ -473,7 +473,7 @@ export function SearchClient({ counts }: SearchClientProps) {
                           {entity.status}
                         </Badge>
                       </div>
-                      <h3 className="truncate font-bold text-neutral-900 transition-colors group-hover:text-auto-accent">
+                      <h3 className="truncate font-serif font-bold text-ink transition-colors group-hover:text-auto-accent">
                         {entity.title}
                       </h3>
                       <p className="line-clamp-1 text-sm text-neutral-500 sm:line-clamp-2">
@@ -487,7 +487,7 @@ export function SearchClient({ counts }: SearchClientProps) {
           )}
 
           {results.length === 0 && (
-            <div className="rounded-lg border border-edge bg-surface-card px-6 py-10 text-center">
+            <div className="rounded-sm border border-edge bg-surface-card px-6 py-10 text-center">
               <p className="mb-1 font-semibold text-neutral-900">
                 Sin resultados para &ldquo;{query}&rdquo;
               </p>

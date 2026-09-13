@@ -407,7 +407,7 @@ export function EntityListExplorer({
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Buscar en ${typeLabel.toLowerCase()}...`}
             aria-label={`Buscar en ${typeLabel}`}
-            className="glass-surface w-full rounded-lg border border-edge py-2.5 pl-10 pr-9 text-sm text-ink placeholder:text-neutral-400 transition focus:border-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="w-full rounded-sm border border-edge bg-surface-input py-2.5 pl-10 pr-9 text-sm text-ink placeholder:text-neutral-400 transition focus:border-oxide-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           />
           {query && (
             <button
@@ -425,12 +425,12 @@ export function EntityListExplorer({
 
         <div className="flex flex-wrap items-center gap-3">
           <label className="flex items-center gap-2 text-xs text-neutral-500">
-            <span className="hidden uppercase tracking-wide text-neutral-400 sm:inline">Orden</span>
+            <span className="eyebrow hidden text-neutral-400 sm:inline">Orden</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
               aria-label="Ordenar resultados"
-              className="rounded-lg border border-edge bg-surface-card/60 px-3 py-2 text-xs font-semibold text-neutral-900 transition-colors hover:border-edge-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+              className="rounded-sm border border-edge bg-surface-card/60 px-3 py-2 text-xs font-semibold text-neutral-900 transition-colors hover:border-edge-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
             >
               {sortOptions.map((option) => (
                 <option key={option} value={option} className="bg-surface-card text-neutral-900">
@@ -442,7 +442,7 @@ export function EntityListExplorer({
 
           {isVehicleList && (
             <div
-              className="flex items-center gap-0.5 rounded-lg border border-edge bg-surface-card/60 p-0.5"
+              className="flex items-center gap-0.5 rounded-sm border border-edge bg-surface-card/60 p-0.5"
               role="group"
               aria-label="Tipo de vista"
             >
@@ -499,7 +499,7 @@ export function EntityListExplorer({
         role="group"
         aria-label="Filtrar resultados"
       >
-        <span className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+        <span className="eyebrow text-[11px] font-semibold text-neutral-400">
           Filtros
         </span>
 
@@ -510,7 +510,7 @@ export function EntityListExplorer({
             onClick={() => setStatus(key)}
             aria-pressed={status === key}
             className={cn(
-              'rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+              'rounded-sm border px-3 py-1.5 font-mono text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
               status === key
                 ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                 : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -523,7 +523,7 @@ export function EntityListExplorer({
 
         {classGroupOptions.length > 0 && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+            <span className="eyebrow ml-1 text-[11px] font-semibold text-neutral-400">
               Categoría
             </span>
             {classGroupOptions.map(({ group, count }) => (
@@ -533,7 +533,7 @@ export function EntityListExplorer({
                 onClick={() => toggleClassGroup(group)}
                 aria-pressed={selectedClassGroup === group}
                 className={cn(
-                  'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                  'rounded-sm border px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   selectedClassGroup === group
                     ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                     : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -548,7 +548,7 @@ export function EntityListExplorer({
 
         {classOptions.length > 0 && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+            <span className="eyebrow ml-1 text-[11px] font-semibold text-neutral-400">
               {selectedClassGroup ? 'Detalle' : 'Clase'}
             </span>
             {classOptions.map(({ value, count }) => (
@@ -558,7 +558,7 @@ export function EntityListExplorer({
                 onClick={() => setSelectedClass((prev) => (prev === value ? null : value))}
                 aria-pressed={selectedClass === value}
                 className={cn(
-                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                  'rounded-sm border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   selectedClass === value
                     ? 'border-auto-accent-orange bg-auto-accent-orange/15 text-auto-accent-orange'
                     : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -573,7 +573,7 @@ export function EntityListExplorer({
 
         {powerBounds && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+            <span className="eyebrow ml-1 text-[11px] font-semibold text-neutral-400">
               Potencia (hp)
             </span>
             <div className="flex items-center gap-1.5">
@@ -591,7 +591,7 @@ export function EntityListExplorer({
                   setPowerRange([Math.min(next, currentMax), currentMax])
                 }}
                 aria-label="Potencia mínima en hp"
-                className="w-16 rounded-lg border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-16 rounded-sm border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               />
               <span className="text-[11px] text-neutral-400">–</span>
               <input
@@ -608,14 +608,14 @@ export function EntityListExplorer({
                   setPowerRange([currentMin, Math.max(next, currentMin)])
                 }}
                 aria-label="Potencia máxima en hp"
-                className="w-16 rounded-lg border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-16 rounded-sm border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               />
               {powerRange && (
                 <button
                   type="button"
                   onClick={() => setPowerRange(null)}
                   aria-label="Quitar filtro de potencia"
-                  className="relative flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
+                  className="relative flex h-5 w-5 items-center justify-center rounded-sm text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
                 >
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -628,7 +628,7 @@ export function EntityListExplorer({
 
         {priceBounds && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+            <span className="eyebrow ml-1 text-[11px] font-semibold text-neutral-400">
               Precio (USD)
             </span>
             <div className="flex items-center gap-1.5">
@@ -646,7 +646,7 @@ export function EntityListExplorer({
                   setPriceRange([Math.min(next, currentMax), currentMax])
                 }}
                 aria-label="Precio mínimo en USD"
-                className="w-20 rounded-lg border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-20 rounded-sm border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               />
               <span className="text-[11px] text-neutral-400">–</span>
               <input
@@ -663,14 +663,14 @@ export function EntityListExplorer({
                   setPriceRange([currentMin, Math.max(next, currentMin)])
                 }}
                 aria-label="Precio máximo en USD"
-                className="w-20 rounded-lg border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-20 rounded-sm border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               />
               {priceRange && (
                 <button
                   type="button"
                   onClick={() => setPriceRange(null)}
                   aria-label="Quitar filtro de precio"
-                  className="relative flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
+                  className="relative flex h-5 w-5 items-center justify-center rounded-sm text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
                 >
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -683,7 +683,7 @@ export function EntityListExplorer({
 
         {yearBounds && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+            <span className="eyebrow ml-1 text-[11px] font-semibold text-neutral-400">
               Año
             </span>
             <div className="flex items-center gap-1.5">
@@ -701,7 +701,7 @@ export function EntityListExplorer({
                   setYearRange([Math.min(next, currentMax), currentMax])
                 }}
                 aria-label="Año mínimo"
-                className="w-16 rounded-lg border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-16 rounded-sm border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               />
               <span className="text-[11px] text-neutral-400">–</span>
               <input
@@ -718,14 +718,14 @@ export function EntityListExplorer({
                   setYearRange([currentMin, Math.max(next, currentMin)])
                 }}
                 aria-label="Año máximo"
-                className="w-16 rounded-lg border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                className="w-16 rounded-sm border border-edge bg-surface-card/60 px-2 py-1 text-[11px] font-semibold text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
               />
               {yearRange && (
                 <button
                   type="button"
                   onClick={() => setYearRange(null)}
                   aria-label="Quitar filtro de año"
-                  className="relative flex h-5 w-5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
+                  className="relative flex h-5 w-5 items-center justify-center rounded-sm text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent before:absolute before:-inset-1.5 before:rounded-full before:content-['']"
                 >
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -738,7 +738,7 @@ export function EntityListExplorer({
 
         {tagOptions.length > 0 && (
           <>
-            <span className="ml-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+            <span className="eyebrow ml-1 text-[11px] font-semibold text-neutral-400">
               Tags
             </span>
             {tagOptions.map(({ tag, count }) => (
@@ -748,7 +748,7 @@ export function EntityListExplorer({
                 onClick={() => toggleTag(tag)}
                 aria-pressed={selectedTags.includes(tag)}
                 className={cn(
-                  'rounded-full border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
+                  'rounded-sm border px-3 py-1 text-[11px] font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent',
                   selectedTags.includes(tag)
                     ? 'border-auto-accent bg-auto-accent/15 text-auto-accent'
                     : 'border-edge text-neutral-500 hover:border-edge-strong hover:text-neutral-900'
@@ -765,7 +765,7 @@ export function EntityListExplorer({
           <button
             type="button"
             onClick={clearAttributeFilters}
-            className="ml-1 flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-[11px] font-semibold text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+            className="ml-1 flex items-center gap-1 rounded-sm border border-transparent px-3 py-1 text-[11px] font-semibold text-neutral-500 transition-colors hover:text-auto-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
           >
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <path d="M18 6 6 18M6 6l12 12" />
@@ -786,7 +786,7 @@ export function EntityListExplorer({
       )}
 
       {filtered.length === 0 ? (
-        <div className="rounded-lg border border-edge bg-surface-card px-6 py-10 text-center">
+        <div className="rounded-sm border border-edge bg-surface-card px-6 py-10 text-center">
           {entities.length === 0 ? (
             <>
               <p className="mb-1 font-semibold text-neutral-900">
@@ -895,7 +895,7 @@ export function EntityListExplorer({
           <button
             type="button"
             onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-            className="rounded-full border border-edge px-5 py-2.5 text-sm font-semibold text-neutral-500 transition-colors hover:border-auto-accent hover:text-auto-accent"
+            className="rounded-sm border border-edge px-5 py-2.5 text-sm font-semibold text-neutral-500 transition-colors hover:border-auto-accent hover:text-auto-accent"
           >
             Cargar más ({filtered.length - visibleCount} restantes)
           </button>
