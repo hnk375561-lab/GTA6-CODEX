@@ -1,6 +1,6 @@
 {
   "name": "sinfrenos",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sin Frenos - Fichas técnicas de autos y motos con comparador y buscador",
   "private": true,
   "scripts": {
@@ -46,6 +46,7 @@
     "generate:media-kit": "node scripts/generate-media-kit.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.1",
     "clsx": "^2.1.1",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
