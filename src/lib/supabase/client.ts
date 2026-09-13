@@ -24,11 +24,25 @@ import { createBrowserClient } from '@supabase/ssr'
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
+// NO se tira acá a propósito (cambio respecto a la versión original de
+// Fase 1). Desde que `useAuth` engancha este cliente al Header — que se
+// monta en TODAS las páginas, no solo en `/ingresar` — un `throw` acá
+// tumbaría el sitio entero (catálogo técnico incluido) apenas faltara una
+// env var de Supabase. Eso contradice el principio central de la sección 3
+// del documento maestro: "si Supabase se cae, el sitio sigue sirviendo".
+// Con env vars faltantes, el cliente se crea igual contra una URL
+// placeholder — las llamadas de red van a fallar (rechazo de promesa), no
+// el render. Cada callsite (useAuth, /ingresar, /publicar, etc.) es
+// responsable de manejar ese fallo sin romper la página.
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error(
-    'Missing Supabase environment variables. ' +
-    'Ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set in .env.local'
+  console.error(
+    'Faltan NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY. ' +
+    'Las features del marketplace (login, listings, favoritos con cuenta) van a fallar silenciosamente. ' +
+    'El catálogo técnico, el comparador y el resto del sitio no se ven afectados.'
   )
 }
 
-export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createBrowserClient(
+  supabaseUrl || 'https://placeholder.invalid',
+  supabaseAnonKey || 'placeholder-anon-key'
+)

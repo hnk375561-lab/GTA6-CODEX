@@ -7,6 +7,7 @@ import { EntityType } from '@/types'
 import { SITE_NAME } from '@/config/site'
 import { cn } from '@/lib/utils'
 import { useWishlist } from '@/lib/hooks/useWishlist'
+import { useAuth } from '@/lib/hooks/useAuth'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { CommandPalette } from '@/components/search/CommandPalette'
 
@@ -41,6 +42,7 @@ export function Header() {
   const pathname = usePathname()
   const [prevPathname, setPrevPathname] = useState(pathname)
   const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
+  const { user, loading: authLoading, signOut } = useAuth()
 
   if (pathname !== prevPathname) {
     setPrevPathname(pathname)
@@ -222,6 +224,44 @@ export function Header() {
           </Link>
 
           <ThemeToggle className={iconBtnClass} />
+
+          {/*
+            Fase 2 (Auth): antes `/ingresar` existía pero no había forma de
+            llegar a él desde la navegación, ni ningún lugar del sitio que
+            mostrara si había sesión activa o permitiera cerrarla. Mientras
+            `authLoading` es true se muestra el mismo ícono deshabilitado
+            (evita el parpadeo login→logout típico de esperar la sesión),
+            igual criterio que `wishlistHydrated` más arriba.
+          */}
+          {authLoading ? (
+            <span className={cn(iconBtnClass, 'cursor-default opacity-50')} aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21a8 8 0 0 0-16 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </span>
+          ) : user ? (
+            <button
+              type="button"
+              onClick={() => signOut()}
+              aria-label={`Cerrar sesión (${user.email})`}
+              title={`Sesión iniciada como ${user.email} — click para cerrar sesión`}
+              className={iconBtnClass}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21a8 8 0 0 0-16 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-archive-green" aria-hidden="true" />
+            </button>
+          ) : (
+            <Link href="/ingresar" aria-label="Ingresar" title="Ingresar" className={iconBtnClass}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21a8 8 0 0 0-16 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </Link>
+          )}
 
           <button
             type="button"

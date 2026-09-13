@@ -215,6 +215,40 @@ async function main() {
     .maybeSingle()
   check('B NO puede leer los favoritos de A', favCross === null)
 
+  // --- 8. `phone` de A nunca viaja fuera de la fila propia ---
+  // (Ver 004_fix_profile_rls_leak.sql: 003 dejaba esto roto — una policy
+  // "USING (true)" en `profiles` exponía `phone` a cualquiera que hiciera
+  // SELECT directo a la tabla, sin pasar por `public_profiles`.)
+  await admin.from('profiles').update({ phone: '+549344xxxxxxx' }).eq('id', userA.id)
+
+  const { data: phoneViaTable } = await clientB
+    .from('profiles')
+    .select('phone')
+    .eq('id', userA.id)
+    .maybeSingle()
+  check('B NO puede leer profiles.phone de A por SELECT directo a la tabla', phoneViaTable === null)
+
+  const { data: phoneViaAnon } = await clientAnon
+    .from('profiles')
+    .select('phone')
+    .eq('id', userA.id)
+    .maybeSingle()
+  check('Anónimo NO puede leer profiles.phone de A por SELECT directo a la tabla', phoneViaAnon === null)
+
+  const { data: viaPublicView, error: viaPublicViewErr } = await clientAnon
+    .from('public_profiles')
+    .select('*')
+    .eq('id', userA.id)
+    .maybeSingle()
+  check(
+    'La vista public_profiles SÍ expone el resto del perfil de A a un anónimo',
+    !viaPublicViewErr && viaPublicView?.id === userA.id
+  )
+  check(
+    'La vista public_profiles NO tiene la columna phone en absoluto',
+    viaPublicView !== null && !Object.prototype.hasOwnProperty.call(viaPublicView, 'phone')
+  )
+
   console.log(`\n${failures === 0 ? '✅ Todos los checks de RLS pasaron' : `❌ ${failures} check(s) de RLS fallaron`}\n`)
 }
 
