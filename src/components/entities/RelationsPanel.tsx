@@ -27,11 +27,20 @@ interface RelationsPanelProps {
 }
 
 /**
- * Agrupa las entidades relacionadas por tipo de vínculo (ej. "Ubicado en",
- * "Conduce", "Trabaja para") en lugar de una lista plana, para que la
+ * Agrupa las entidades relacionadas por tipo de vínculo (ej. "Mismo
+ * fabricante", "Competidor") en lugar de una lista plana, para que la
  * naturaleza de cada relación sea explícita. Cada fila muestra un avatar
  * (imagen real o glifo de categoría) para que el panel se sienta como un
  * índice de base de datos navegable, no una lista de texto.
+ *
+ * NOTA (auditoría UX 2026-09-13, hallazgo D-6): paleta migrada de
+ * auto-accent/auto-darker (paleta "Placa Técnica" heredada) a
+ * oxide-red/ink (identidad "Archivo") para que este panel sea
+ * consistente con el resto del sitio. auto-accent y oxide-red son el
+ * mismo color (#B23A24) — el cambio es de nombre, no visual. El overlay
+ * hover:bg-auto-darker/40 sí era un bug real: auto-darker es casi negro
+ * (#050607) y el panel vive sobre fondo papel claro, así que ese hover
+ * se veía como una mancha oscura en vez de un hover sutil.
  */
 export function RelationsPanel({ related, currentSlug, currentType }: RelationsPanelProps) {
   if (related.length === 0) return null
@@ -53,8 +62,8 @@ export function RelationsPanel({ related, currentSlug, currentType }: RelationsP
     <div className="space-y-5">
       {Array.from(groups.entries()).map(([label, entities]) => (
         <div key={label}>
-          <h3 className="mb-2.5 flex items-center gap-1.5 font-mono text-xs font-semibold uppercase tracking-wide text-auto-accent">
-            <span className="h-1 w-1 rounded-full bg-auto-accent" aria-hidden="true" />
+          <h3 className="mb-2.5 flex items-center gap-1.5 font-mono text-xs font-semibold uppercase tracking-wide text-oxide-red">
+            <span className="h-1 w-1 rounded-full bg-oxide-red" aria-hidden="true" />
             {label}
           </h3>
           <ul className="space-y-2">
@@ -77,7 +86,7 @@ export function RelationsPanel({ related, currentSlug, currentType }: RelationsP
                   <Link
                     href={`/${e.type}/${e.slug}`}
                     prefetch={false}
-                    className="group flex flex-1 items-center gap-3 rounded-md border border-dashed border-transparent px-2 py-2 transition-colors duration-200 hover:border-edge-strong hover:bg-auto-darker/40"
+                    className="group flex flex-1 items-center gap-3 rounded-md border border-dashed border-transparent px-2 py-2 transition-colors duration-200 hover:border-edge-strong hover:bg-ink/5"
                   >
                     <EntityImage
                       entity={e}
@@ -86,7 +95,7 @@ export function RelationsPanel({ related, currentSlug, currentType }: RelationsP
                       className="h-11 w-11 shrink-0 transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="flex min-w-0 flex-col gap-1.5">
-                      <span className="link-underline truncate text-sm text-neutral-900 group-hover:text-auto-accent">
+                      <span className="link-underline truncate text-sm text-neutral-900 group-hover:text-oxide-red">
                         {e.title}
                       </span>
                       {/* font-mono: mismo lenguaje que la pestaña de categoría
@@ -99,7 +108,7 @@ export function RelationsPanel({ related, currentSlug, currentType }: RelationsP
                     </div>
                     <span
                       aria-hidden="true"
-                      className="ml-auto shrink-0 text-neutral-500/40 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-auto-accent group-hover:opacity-100"
+                      className="ml-auto shrink-0 text-neutral-500/40 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-oxide-red group-hover:opacity-100"
                     >
                       →
                     </span>
@@ -108,7 +117,7 @@ export function RelationsPanel({ related, currentSlug, currentType }: RelationsP
                     <Link
                       href={compareHref}
                       prefetch={false}
-                      className="shrink-0 rounded-md border border-dashed border-edge-strong px-2 py-2 font-mono text-[10px] uppercase tracking-wide text-neutral-500 opacity-0 transition duration-200 hover:border-auto-accent hover:text-auto-accent active:scale-95 group-hover/row:opacity-100 focus-visible:border-auto-accent focus-visible:text-auto-accent focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auto-accent"
+                      className="shrink-0 rounded-md border border-dashed border-edge-strong px-2 py-2 font-mono text-[10px] uppercase tracking-wide text-neutral-500 opacity-0 transition duration-200 hover:border-oxide-red hover:text-oxide-red active:scale-95 group-hover/row:opacity-100 focus-visible:border-oxide-red focus-visible:text-oxide-red focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oxide-red"
                       aria-label={`Comparar con ${e.title}`}
                     >
                       Comparar

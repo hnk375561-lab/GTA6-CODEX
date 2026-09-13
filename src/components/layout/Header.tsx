@@ -12,7 +12,14 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 /**
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
  * (Vehículos) más las secciones transversales que no son un tipo de
- * entidad (Comparar, Galería, Mapa).
+ * entidad (Comparar, Galería).
+ *
+ * NOTA (auditoría UX 2026-09-13, hallazgo D-1): "Mapa" se sacó de acá.
+ * /mapa es un stub "en construcción" sin funcionalidad real (Leaflet y
+ * los datos que modelaba se eliminaron del repo por completo). Ofrecer
+ * un ítem de navegación persistente que no lleva a nada real rompe la
+ * confianza del usuario en el primer click que lo prueba. Volver a
+ * agregarlo acá solo cuando /mapa tenga contenido real que mostrar.
  */
 const NAV_LINKS = [
   { href: `/${EntityType.VEHICLE}`, label: 'Vehículos' },
@@ -20,7 +27,6 @@ const NAV_LINKS = [
   { href: `/${EntityType.GUIDE}`, label: 'Guías' },
   { href: '/comparar', label: 'Comparar' },
   { href: '/galeria', label: 'Galería' },
-  { href: '/mapa', label: 'Mapa' },
 ]
 
 // Nombre de marca partido en dos para poder colorear la segunda palabra
@@ -83,6 +89,24 @@ export function Header() {
           <span className="hidden font-serif text-base font-semibold tracking-tight text-ink transition-colors duration-300 group-hover:text-oxide-red sm:inline">
             {SITE_NAME_FIRST_WORD} <span className="text-oxide-red">{SITE_NAME_REST}</span>
           </span>
+        </Link>
+
+        {/*
+          NOTA (auditoría UX 2026-09-13, hallazgo D-2): el diferencial real
+          del producto — que cada dato cita su fuente y su nivel de
+          confianza — no tenía ninguna presencia en la navegación global;
+          vivía escondido en un badge de 9px dentro de cada card. Este
+          enlace lo sube a un elemento persistente visible en todas las
+          páginas, apuntando al ancla real del hero (ver ArchiveHero,
+          id="evidencia") en vez de a una ruta nueva no auditada todavía.
+        */}
+        <Link
+          href="/#evidencia"
+          prefetch={false}
+          className="hidden items-center gap-1.5 rounded border border-archive-green/30 bg-archive-green/5 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-archive-green transition-colors hover:border-archive-green hover:bg-archive-green/10 lg:flex"
+        >
+          <span className="h-1 w-1 rounded-full bg-archive-green" aria-hidden="true" />
+          Evidencia citada
         </Link>
 
         {/* Navegación principal (desktop) */}

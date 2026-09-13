@@ -62,8 +62,15 @@ export function ArchiveHero({ vehicleCount, evidenceCoveragePct, featuredVehicle
               El fade-in decorativo se mantiene solo para las fichas de
               vehículo del lado derecho (contenido secundario, no LCP). */}
           <div className="space-y-8 lg:sticky lg:top-8">
-            {/* Identificador de archivo */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-oxide-red/30 pb-4">
+            {/* Identificador de archivo.
+                id="evidencia" + scroll-mt-24: destino real del enlace
+                "Evidencia citada" del Header (auditoría UX 2026-09-13,
+                hallazgo D-2). scroll-mt compensa el header sticky para
+                que el ancla no quede tapada al hacer scroll hasta acá. */}
+            <div
+              id="evidencia"
+              className="flex flex-wrap items-center gap-x-3 gap-y-2 scroll-mt-24 border-b border-oxide-red/30 pb-4"
+            >
               <div className="h-2 w-2 flex-shrink-0 bg-oxide-red" />
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink/70">
                 ARCHIVO AUTOMOTOR VERIFICADO

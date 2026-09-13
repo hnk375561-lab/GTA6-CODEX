@@ -300,6 +300,29 @@ export function validateRelation(relation: EntityRelation): boolean {
  * 
  * @param relation - Código de relación a traducir
  * @returns Etiqueta legible en español, o el código original si no hay mapeo
+ *
+ * NOTA (auditoría UX 2026-09-13, hallazgo D-6): se auditó contra el
+ * contenido real (src/content/**\/*.json, no solo este archivo) qué
+ * códigos de relación existen HOY en producción. Los únicos que
+ * aparecen son: "competidor" (694), "mismo_fabricante" (570), "produce"
+ * (250, vehículo↔fabricante), "related_model" (1) y "related_guide" (1).
+ * De esos cinco, "produce", "related_model" y "related_guide" NO tenían
+ * entrada en este mapa, así que caían al fallback `|| relation` y se
+ * mostraban tal cual (en inglés/snake_case) en RelationsPanel para
+ * cualquier ficha de fabricante — bug real y activo, no hipotético. Se
+ * agregan acá las tres etiquetas que faltaban.
+ *
+ * El resto de las claves de este mapa (aparece_en, conducido_por,
+ * lidera, amigo_de, enemigo_de, trabaja_para, pertenece_a, contiene,
+ * involve/involves, companion, conducts, located_in, owns, leads,
+ * works_for, appears_in, appears_with, associated_with, spouse_of,
+ * related_line, member_of, variant_of, partners_with, invests_in) es
+ * vocabulario heredado de la wiki de personajes de GTA6 y NO aparece en
+ * ningún contenido real de vehículos/fabricantes/guías/noticias hoy.
+ * Se deja sin tocar en esta entrega (no se borra) porque decidir si se
+ * elimina es un cambio de arquitectura/limpieza de código muerto, no
+ * una corrección de bug — corresponde a Fase 3/4 del proceso de
+ * auditoría, no a este arreglo puntual.
  */
 export function getRelationLabel(relation: string): string {
   const labels: Record<string, string> = {
@@ -333,6 +356,9 @@ export function getRelationLabel(relation: string): string {
     invests_in: 'Invierte en',
     mismo_fabricante: 'Mismo fabricante',
     competidor: 'Competidor',
+    produce: 'Produce',
+    related_model: 'Modelo relacionado',
+    related_guide: 'Guía relacionada',
   }
 
   return labels[relation] || relation
