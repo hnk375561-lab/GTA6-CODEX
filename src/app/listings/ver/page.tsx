@@ -2,6 +2,7 @@
 
 import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabase/client';
 
 type Listing = {
@@ -23,6 +24,17 @@ type Listing = {
   accepts_financing: boolean;
   has_title: boolean | null;
   title_status: string | null;
+  // Sección 4.7: opcional a propósito — un listing sin match exacto en el
+  // catálogo (brand/model/version tipeados libres por el vendedor) igual
+  // debe poder existir con esto en null (criterio de aceptación de Fase 3).
+  vehicle_model_slug: string | null;
+};
+
+type VehicleModel = {
+  slug: string;
+  manufacturer: string;
+  title: string;
+  class: string | null;
 };
 
 type Media = {
@@ -40,6 +52,7 @@ function ListingContent() {
   const [media, setMedia] = useState<Media[]>([]);
   const [categoryName, setCategoryName] = useState<string | null>(null);
   const [conditionLabel, setConditionLabel] = useState<string | null>(null);
+  const [vehicleModel, setVehicleModel] = useState<VehicleModel | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -87,6 +100,19 @@ function ListingContent() {
       setMedia(mediaData ?? []);
       setCategoryName(categoryData?.name ?? listingData.category_id);
       setConditionLabel(conditionData?.label ?? listingData.condition_id);
+
+      // vehicle_model_slug es opcional (sección 4.7): si es null, no hay
+      // nada que buscar y la página debe seguir funcionando igual — no es
+      // un error, es el caso normal de "sin match en el catálogo".
+      if (listingData.vehicle_model_slug) {
+        const { data: modelData } = await supabase
+          .from('vehicle_models')
+          .select('slug, manufacturer, title, class')
+          .eq('slug', listingData.vehicle_model_slug)
+          .maybeSingle();
+        setVehicleModel(modelData ?? null);
+      }
+
       setLoading(false);
     })();
   }, [id]);
@@ -123,6 +149,15 @@ function ListingContent() {
           <span style={{ fontWeight: 600, color: '#c0392b' }}>{conditionLabel}</span>
         )}
       </div>
+
+      {vehicleModel && (
+        <p style={{ marginBottom: 16 }}>
+          Coincide con la ficha técnica del catálogo:{' '}
+          <Link href={`/vehiculos/${vehicleModel.slug}`} style={{ color: '#c0392b', fontWeight: 600 }}>
+            {vehicleModel.manufacturer} {vehicleModel.title}
+          </Link>
+        </p>
+      )}
 
       {listing.description && (
         <>
