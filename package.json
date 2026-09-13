@@ -46,7 +46,10 @@
     "generate:media-kit": "node scripts/generate-media-kit.mjs",
     "setup:supabase": "node scripts/setup-supabase-fase1.mjs",
     "setup:rls": "node scripts/setup-rls-fase1.mjs",
-    "test:rls": "node scripts/test-rls.mjs"
+    "test:rls": "node scripts/test-rls.mjs",
+    "sync:vehicle-models": "node scripts/sync-vehicle-models.mjs",
+    "seed:listings-fase3": "node scripts/seed-listings-fase3.mjs",
+    "seed:listings-fase3:cleanup": "node scripts/seed-listings-fase3.mjs --cleanup"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
