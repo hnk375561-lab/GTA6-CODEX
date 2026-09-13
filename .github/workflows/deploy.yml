@@ -38,6 +38,18 @@ env:
   # build) #154). `enrich-vehicles.yml` ya usa Node 22 por este mismo
   # motivo.
   NODE_VERSION: '22.x'
+  # FASE 1 SUPABASE (12/09/2026): a nivel de WORKFLOW, no de un step
+  # suelto, a propósito. `npm run verify:content` corre su propio
+  # `next build` interno (para confirmar que el build no se rompe pese a
+  # una entidad de prueba con fecha inválida) dentro del step "Run
+  # verification scripts" — un env: puesto solo en el step "Build
+  # (verificación)" de más abajo NO llega a ese build interno, y
+  # src/lib/supabase/client.ts revienta con "Missing Supabase
+  # environment variables" al evaluarse el módulo. Poniéndolas acá,
+  # TODOS los steps de TODOS los jobs las heredan, sin importar en qué
+  # step se dispare un build.
+  NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
 jobs:
   build-and-test:
@@ -116,8 +128,6 @@ jobs:
         env:
           GITHUB_PAGES_BASE_PATH: '/Sin-Frenos'
           NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/Sin-Frenos
-          # FASE 1 SUPABASE: si falta esto, `next build` revienta apenas
-          # una página importe src/lib/supabase/client.ts, porque ese
-          # archivo lanza un throw explícito si estas dos vars no están.
-          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          # Las variables de Supabase ya están heredadas del env: de nivel
+          # de workflow (ver arriba de todo del archivo) — no hace falta
+          # repetirlas acá.
