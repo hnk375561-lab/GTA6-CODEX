@@ -8,6 +8,7 @@ import { SITE_NAME } from '@/config/site'
 import { cn } from '@/lib/utils'
 import { useWishlist } from '@/lib/hooks/useWishlist'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { CommandPalette } from '@/components/search/CommandPalette'
 
 /**
  * Enlaces siempre visibles en la barra: la categoría núcleo del sitio
@@ -36,6 +37,7 @@ const SITE_NAME_REST = SITE_NAME_REST_WORDS.join(' ')
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [paletteOpen, setPaletteOpen] = useState(false)
   const pathname = usePathname()
   const [prevPathname, setPrevPathname] = useState(pathname)
   const { count: wishlistCount, hydrated: wishlistHydrated } = useWishlist()
@@ -64,6 +66,30 @@ export function Header() {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Atajo global "/" → abre el buscador rápido (auditoría UX, hallazgo
+  // [3.1]/[3.2]). Antes este listener solo existía dentro de
+  // `QuickSearchForm` (local a la Home) — el ícono de lupa del Header
+  // aparece en TODAS las páginas pero "/" no hacía nada en ninguna otra.
+  // `Header` se monta una sola vez en el layout raíz y sobrevive a la
+  // navegación entre páginas, así que este es el lugar correcto para un
+  // atajo que debe funcionar en todo el sitio. Se ignora si el foco ya
+  // está en un campo editable, para no robarle "/" a quien lo esté
+  // escribiendo en otro input de la página (mismo criterio que tenía
+  // `QuickSearchForm`, movido acá).
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return
+      const target = e.target as HTMLElement | null
+      const tag = target?.tagName
+      const isEditable = tag === 'INPUT' || tag === 'TEXTAREA' || target?.isContentEditable
+      if (isEditable) return
+      e.preventDefault()
+      setPaletteOpen(true)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
   const iconBtnClass = 'tap-scale relative flex h-9 w-9 items-center justify-center rounded border border-ink/20 text-ink/60 transition hover:border-ink hover:text-ink focus-visible:border-ink focus-visible:text-ink before:absolute before:-inset-1 before:rounded-lg before:content-[\'\']'
@@ -140,7 +166,20 @@ export function Header() {
 
         {/* Búsqueda y menú móvil */}
         <div className="flex items-center gap-2">
-          <Link href="/buscar" aria-label="Buscar" className={iconBtnClass}>
+          {/*
+            NOTA (auditoría UX, hallazgo [3.1]): antes esto era un
+            `<Link href="/buscar">` — click → navegar a una página nueva →
+            esperar el fetch+build del índice de búsqueda → recién ahí
+            tipear. Ahora abre `CommandPalette` in-place, sin abandonar la
+            página actual; `/buscar` sigue existiendo para la búsqueda
+            completa con filtros (linkeada desde dentro del propio panel).
+          */}
+          <button
+            type="button"
+            onClick={() => setPaletteOpen(true)}
+            aria-label="Buscar (atajo: tecla oblicua)"
+            className={iconBtnClass}
+          >
             <svg
               width="16"
               height="16"
@@ -155,7 +194,7 @@ export function Header() {
               <circle cx="11" cy="11" r="7" />
               <path d="m21 21-4.3-4.3" />
             </svg>
-          </Link>
+          </button>
 
           <Link href="/favoritos" aria-label={`Favoritos${wishlistHydrated && wishlistCount > 0 ? ` (${wishlistCount})` : ''}`} className={cn(iconBtnClass, 'relative')}>
             <svg
@@ -246,6 +285,8 @@ export function Header() {
           })}
         </ul>
       </nav>
+
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
     </header>
   )
 }

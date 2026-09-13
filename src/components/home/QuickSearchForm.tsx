@@ -73,24 +73,14 @@ export function QuickSearchForm({ examples = DEFAULT_EXAMPLES }: QuickSearchForm
     router.push(trimmed ? `/buscar?q=${encodeURIComponent(trimmed)}` : '/buscar')
   }
 
-  // Atajo "/" para enfocar la búsqueda sin tocar el mouse, mismo patrón
-  // que sitios de referencia (GitHub, Notion, etc.). Se ignora si el foco
-  // ya está en un campo de texto/textarea/contentEditable, para no robar
-  // el "/" a quien lo esté escribiendo en otro input de la página.
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return
-      const target = e.target as HTMLElement | null
-      const tag = target?.tagName
-      const isEditable =
-        tag === 'INPUT' || tag === 'TEXTAREA' || target?.isContentEditable
-      if (isEditable) return
-      e.preventDefault()
-      inputRef.current?.focus()
-    }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  // NOTA (auditoría UX, hallazgo [3.2]): el atajo "/" vivía acá, local a
+  // este componente — solo funcionaba en la Home, y el ícono de lupa del
+  // Header (visible en TODAS las páginas) no lo anunciaba ni lo ofrecía
+  // en ningún otro lado. Se movió a un nivel global (`Header.tsx`), donde
+  // ahora abre `CommandPalette` (ver [3.1]) desde cualquier página,
+  // incluida esta. El `<kbd>` de abajo sigue anunciando el atajo: sigue
+  // siendo cierto que "/" abre una búsqueda instantánea, solo que ahora
+  // es el panel global en vez de enfocar este input puntual.
 
   return (
     <form

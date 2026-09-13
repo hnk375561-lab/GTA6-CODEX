@@ -455,6 +455,138 @@ a:not(.no-style) {
   background-color: rgba(20, 17, 12, 0.95);
 }
 
+/* === CARD MEDIA EFFECTS (Pase 2 de auditoría, [2.1]) ===
+ * Estas clases se usaban desde hace tiempo en `EntityImage.tsx` /
+ * `EntityGallery.tsx` (el componente de imagen más reutilizado del sitio:
+ * toda card de vehículo, toda miniatura de galería) pero no tenían ninguna
+ * regla CSS asociada — divs `aria-hidden` vacíos sin efecto. Se recuperan
+ * acá con la intención que sugerían sus nombres y los comentarios cercanos
+ * en el código, en vez de borrarlos: son barato de mantener y el
+ * componente ya reserva el layout para ellos (no hay CLS).
+ */
+
+/* Brillo diagonal que cruza la foto al pasar el mouse — mismo lenguaje
+   táctil que `.lift-on-hover` y `.cta-shine`, aplicado a imágenes. Se
+   activa con `:hover` sobre el propio contenedor `.card-media` (no
+   depende de qué `group` nombrado use la card por fuera, así funciona
+   igual en `EntityCard`, `VehicleCardV2` y `EntityGallery`). */
+.card-media-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.16) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 700ms var(--ease-standard);
+}
+
+.card-media:hover .card-media-sheen {
+  transform: translateX(120%);
+}
+
+/* Viñeta fotográfica sutil (oscurece apenas las esquinas) — distinta del
+   degradé de legibilidad para texto superpuesto que ya arma `EntityCard`
+   con sus propios divs; esta es puramente óptica, siempre visible, no
+   gestual. */
+.card-media-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: inset 0 0 2.5rem rgba(20, 17, 12, 0.16);
+}
+
+.dark .card-media-vignette {
+  box-shadow: inset 0 0 2.5rem rgba(0, 0, 0, 0.35);
+}
+
+/* Barrido sutil sobre el estado "sin imagen verificada" — un acuse de
+   vida en un hueco que de otra forma es un rectángulo estático, sin
+   simular una carga que no existe (no es un skeleton: la entidad
+   simplemente no tiene foto). */
+.card-media-fallback-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(var(--color-ink), 0.035) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: cardMediaFallbackSweep 5s ease-in-out infinite;
+}
+
+@keyframes cardMediaFallbackSweep {
+  0% {
+    background-position: 150% 0;
+  }
+  50% {
+    background-position: -50% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+/* Marco del glifo de categoría en el estado "sin imagen" — antes era un
+   ícono flotando sin ningún tratamiento; ahora un sello circular tenue,
+   consistente con la estética de "archivo verificado" (bordes secos,
+   sin blur, sin glow). */
+.card-media-fallback-glyph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--color-edge));
+  background-color: rgba(var(--color-ink), 0.03);
+  color: rgb(var(--color-neutral-500));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-media-sheen {
+    transition: none;
+  }
+  .card-media-fallback-sweep {
+    animation: none;
+  }
+}
+
+/* === CARD VIEWPORT CONTAINMENT (Pase 2 de auditoría, [2.1]) ===
+ * `content-visibility: auto` le dice al navegador que no calcule layout
+ * ni pinte estas cards mientras están fuera de pantalla — el comentario
+ * original en `EntityListExplorer.tsx` ya documentaba esta intención
+ * ("menos DOM real además de menos pintado") pero la clase nunca tuvo
+ * la regla real detrás. `contain-intrinsic-size` evita que el navegador
+ * colapse el espacio reservado a 0 antes de la primera medición (lo que
+ * rompería el scroll — la página "saltaría" al hacer scroll rápido).
+ * Los altos son aproximados a propósito: solo importan para reservar
+ * espacio antes de pintar, no para el layout final real de la card. */
+.entity-card-viewport {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 420px;
+}
+
+.entity-card-viewport--row {
+  contain-intrinsic-size: 0 104px;
+}
+
+/* === HINT DE ATAJO DE TECLADO (Pase 2 de auditoría, [2.1] / [3.2]) ===
+ * Estilo de "tecla física" para el indicador "/" del buscador — antes
+ * era solo texto suelto con borde genérico de Tailwind. Reutilizado
+ * también por el overlay de búsqueda global (ver `CommandPalette`). */
+.hero-search-kbd-hint {
+  background-color: rgb(var(--color-surface-card));
+  box-shadow: 0 1px 0 1px rgb(var(--color-edge-strong));
+}
+
 /* === GUTTER WIDTH === */
 @media (max-width: 640px) {
   :root {
