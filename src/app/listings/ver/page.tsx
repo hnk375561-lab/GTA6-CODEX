@@ -44,13 +44,13 @@ function ListingContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) {
-      setError('Falta el parámetro id en la URL (?id=...)');
-      setLoading(false);
-      return;
-    }
-
     (async () => {
+      if (!id) {
+        setError('Falta el parámetro id en la URL (?id=...)');
+        setLoading(false);
+        return;
+      }
+
       const { data: listingData, error: listingError } = await supabase
         .from('listings')
         .select('*')
