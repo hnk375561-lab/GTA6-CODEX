@@ -169,21 +169,31 @@ interface VehicleCompareTableProps {
 export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: VehicleCompareTableProps) {
   if (vehicles.length === 0) return null
 
-  // Con 2-3 vehículos las columnas siempre entran cómodas en una fila.
-  // A partir de 4 (hasta MAX_COMPARE = 5), en pantallas angostas la
-  // grilla quedaría demasiado apretada — en vez de eso le ponemos un piso
-  // de ancho por columna y dejamos que el contenedor scrollee horizontal.
-  // El `minWidth` es lo único que difiere entre casos: en 2-3 vehículos
-  // queda `undefined` (mismo layout de siempre, sin scroll).
-  const scrollable = vehicles.length > 3
-  const minWidth = scrollable ? `${vehicles.length * 180}px` : undefined
+  // P1 [PENDIENTE → CORREGIDO, Pase 4 / Bloque 5, auditoría mobile]:
+  // el umbral anterior (`vehicles.length > 3`) asumía que 2-3 vehículos
+  // "siempre entran cómodas en una fila" — cierto en desktop, falso en
+  // un viewport real de ~360-390px. Con 3 columnas sin piso de ancho,
+  // celdas como "Dimensiones" ("4230 x 1780 x 1650 mm") o "Consumo"
+  // ("6.5 L/100km (mixto)") no tienen lugar ni para una palabra y
+  // quedan partidas letra por letra. La cantidad de vehículos no es lo
+  // que importa: lo que importa es si el viewport real alcanza. Por
+  // eso ahora cada columna tiene un piso fijo (140px, el mínimo donde
+  // esas celdas siguen legibles) vía `minmax(140px, 1fr)` en el propio
+  // grid, y el contenedor SIEMPRE puede scrollear horizontal si hace
+  // falta — en pantallas anchas el `1fr` ocupa todo el espacio
+  // disponible sin scroll (comportamiento idéntico al de antes); en
+  // mobile, si 2+ columnas de 140px no entran, aparece scroll horizontal
+  // en vez de aplastar el contenido. Mismo criterio aplicado también a
+  // la grilla de equipamiento y a `CompareRow` más abajo.
+  const MIN_COMPARE_COLUMN_PX = 140
+  const compareGridColumns = `repeat(${vehicles.length}, minmax(${MIN_COMPARE_COLUMN_PX}px, 1fr))`
 
   return (
-    <div className={scrollable ? 'overflow-x-auto' : undefined}>
-      <div style={{ minWidth }}>
+    <div className="overflow-x-auto">
+      <div style={{ minWidth: `${vehicles.length * MIN_COMPARE_COLUMN_PX}px` }}>
         <div
           className="grid gap-4"
-          style={{ gridTemplateColumns: `repeat(${vehicles.length}, minmax(0, 1fr))` }}
+          style={{ gridTemplateColumns: compareGridColumns }}
         >
           {vehicles.map((v) => {
             const img = imageBySlug?.[`vehiculos/${v.slug}`]
@@ -377,7 +387,7 @@ export function VehicleCompareTable({ vehicles, imageBySlug, onRemove }: Vehicle
                     <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">{equipmentName}</p>
                     <div
                       className="grid gap-3"
-                      style={{ gridTemplateColumns: `repeat(${vehicles.length}, minmax(0, 1fr))` }}
+                      style={{ gridTemplateColumns: compareGridColumns }}
                     >
                       {vehicles.map((v) => {
                         const matrix = getVehicleEquipmentMatrix(v, [equipmentName])
@@ -525,7 +535,9 @@ function CompareRow({
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">{label}</p>
       <div
         className={cn('grid gap-4', align === 'center' && 'items-center')}
-        style={{ gridTemplateColumns: `repeat(${Array.isArray(children) ? children.length : 1}, minmax(0, 1fr))` }}
+        style={{
+          gridTemplateColumns: `repeat(${Array.isArray(children) ? children.length : 1}, minmax(140px, 1fr))`,
+        }}
       >
         {children}
       </div>

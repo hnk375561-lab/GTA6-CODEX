@@ -619,3 +619,31 @@ a:not(.no-style) {
     --gutter-width: 1rem;
   }
 }
+
+/* === TAMAÑO MÍNIMO DE FUENTE EN CONTROLES DE FORMULARIO, MOBILE ===
+ * Pase 4 de auditoría, Bloque 5 (mobile real) [P1]: iOS Safari hace
+ * zoom automático del viewport al enfocar cualquier <input>/<textarea>
+ * cuyo font-size computado sea menor a 16px. Casi todos los inputs
+ * reales del sitio usaban `text-sm` (14px) de Tailwind, incluidos los
+ * 5 formularios de generación de leads (SellVehicleLeadForm,
+ * TramitesLeadForm, LeadQuoteForm, ForSaleFlyerForm,
+ * NewsletterSignupForm) y 4 de los 5 buscadores del sitio
+ * (EntityListExplorer, GalleryExplorer, CompareExplorer,
+ * QuickSearchForm) — el usuario tocaba el input y la pantalla saltaba
+ * de tamaño, justo en el embudo de conversión del negocio. Se corrige
+ * acá, en un solo lugar, en vez de tocar `text-sm` → `text-base` en
+ * cada uno de esos ~10 archivos (lo que además agrandaría visualmente
+ * inputs donde `text-sm` sí es la decisión de diseño correcta en
+ * desktop, ver `SearchClient.tsx` que ya usa `text-lg` a propósito).
+ * Solo aplica bajo 640px y solo a controles de formulario reales,
+ * nunca a texto estático. `input[type]` tiene la misma especificidad
+ * que una clase de Tailwind; `textarea`/`select` sin atributo no, por
+ * eso el `!important` acota expresamente a estos tres selectores de
+ * formulario y a ningún otro elemento del sitio. */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
