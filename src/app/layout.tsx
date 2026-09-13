@@ -139,7 +139,7 @@ export default async function RootLayout({
             "img-src 'self' data: https://img.youtube.com https://i.ytimg.com https://*.googlesyndication.com https://*.google.com https://*.gstatic.com https://*.google-analytics.com",
             "font-src 'self' data:",
             "frame-src https://googleads.g.doubleclick.net https://*.google.com",
-            "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://static.cloudflareinsights.com https://pagead2.googlesyndication.com",
+            "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://static.cloudflareinsights.com https://pagead2.googlesyndication.com https://*.supabase.co",
             "object-src 'none'",
             "base-uri 'self'",
           ].join('; ')}
@@ -166,7 +166,7 @@ export default async function RootLayout({
             __html: "(function(){try{var k='sinfrenos:theme';var p=localStorage.getItem(k);var dark=p==='dark'||((!p||p==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(dark){document.documentElement.classList.add('dark')}}catch(e){}})();",
           }}
         />
-        <a
+        
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-auto-dark focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         >
