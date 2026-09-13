@@ -32,6 +32,19 @@ jobs:
   # estaba y sigue corriendo en cada push/PR — sirve como señal visible
   # en la pestaña Actions y en PRs — pero la publicación real a
   # producción ya NO depende únicamente de que alguien lo mire.
+  #
+  # HALLAZGO F-02 (Fase 1 Supabase, 12/09/2026): se cambió `npm ci` por
+  # `npm install` en los dos jobs de abajo. Motivo: el proyecto se edita
+  # 100% desde la web de GitHub (sin terminal local), así que
+  # `package-lock.json` se actualiza a mano junto con `package.json` sin
+  # poder correr `npm install` localmente antes de commitear. `npm ci`
+  # exige que el lockfile esté sincronizado byte a byte con package.json
+  # o falla inmediatamente; `npm install` en cambio actualiza el lockfile
+  # sobre la marcha durante el build. Trade-off consciente: se pierde
+  # algo de reproducibilidad estricta entre builds a cambio de poder
+  # seguir trabajando sin terminal. Si en el futuro se empieza a trabajar
+  # con Codespaces o una compu con Node local, se puede volver a `npm ci`
+  # corriendo `npm install` una vez ahí para resincronizar el lockfile.
   quality-gate:
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +72,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Type check
         run: npm run type-check
@@ -84,7 +97,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Generate content bundle
         run: node scripts/generate-content-bundle.mjs
@@ -102,6 +115,17 @@ jobs:
           # (hnk375561-lab.github.io/Sin-Frenos) — ver next.config.js.
           GITHUB_PAGES_BASE_PATH: '/Sin-Frenos'
           NEXT_PUBLIC_SITE_URL: https://hnk375561-lab.github.io/Sin-Frenos
+
+          # ------------------------------------------------------------
+          # FASE 1 — SUPABASE (agregado 12/09/2026)
+          # Van como Repository VARIABLE (${{ vars.* }}), no secret,
+          # porque la anon key es pública por diseño de Supabase — igual
+          # termina horneada en el HTML/JS público, mismo criterio ya
+          # usado acá abajo con NEXT_PUBLIC_GA_ID. Configurar en:
+          # Settings → Secrets and variables → Actions → pestaña
+          # "Variables" → New repository variable.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
           # ------------------------------------------------------------
           # HALLAZGO #1 (auditoría FASE 2, 12/09/2026): estas 24 variables
