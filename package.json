@@ -48,6 +48,7 @@
     "setup:rls": "node scripts/setup-rls-fase1.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.39.1",
     "clsx": "^2.1.1",
     "fuse.js": "^7.0.0",
