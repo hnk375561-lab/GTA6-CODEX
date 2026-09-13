@@ -110,7 +110,7 @@ function ListingContent() {
       <h1 style={{ marginTop: 24 }}>{listing.title}</h1>
 
       <p style={{ fontSize: 24, fontWeight: 700 }}>
-        {listing.price_type === 'a_convenir' || !listing.price_amount
+        {listing.price_type === 'on_request' || !listing.price_amount
           ? 'Precio a convenir'
           : `${listing.price_currency ?? 'ARS'} ${listing.price_amount.toLocaleString('es-AR')}`}
       </p>

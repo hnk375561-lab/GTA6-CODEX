@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * Script para Aplicar Políticas RLS (Row Level Security)
+ * Script para Aplicar Políticas RLS (Row Level Security) — Fase 2
  *
- * IMPORTANTE: Este script lee las políticas de RLS_POLICIES.md
- * y las aplica vía el dashboard de Supabase o CLI.
+ * IMPORTANTE: desde el 13/09/2026 las políticas reales viven como SQL
+ * versionado en supabase/migrations/003_rls_policies.sql (no en
+ * RLS_POLICIES.md, que quedó documentado pero nunca se aplicaba solo).
+ * Este script no ejecuta SQL él mismo (la anon key no tiene permiso para
+ * correr SQL arbitrario) — imprime instrucciones y confirma qué archivos
+ * hay que aplicar.
  */
 
 import * as fs from 'fs'
@@ -15,54 +19,40 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const rootDir = path.resolve(__dirname, '..')
 
-console.log('🔐 FASE 1 — Aplicar Políticas RLS\n')
+console.log('🔐 FASE 2 — Aplicar schema y políticas RLS\n')
 
-// Leer el archivo RLS_POLICIES.md
-const rlsPath = path.join(rootDir, 'supabase/migrations/RLS_POLICIES.md')
+const migration002 = path.join(rootDir, 'supabase/migrations/002_align_schema_to_master_doc.sql')
+const migration003 = path.join(rootDir, 'supabase/migrations/003_rls_policies.sql')
 
-if (!fs.existsSync(rlsPath)) {
-  console.error('❌ Archivo RLS_POLICIES.md no encontrado')
-  process.exit(1)
+for (const [label, filePath] of [
+  ['002_align_schema_to_master_doc.sql (tablas nuevas + columnas nuevas)', migration002],
+  ['003_rls_policies.sql (políticas RLS reales)', migration003],
+]) {
+  if (!fs.existsSync(filePath)) {
+    console.error(`❌ No se encontró ${filePath}`)
+    process.exit(1)
+  }
+  console.log(`✅ Encontrado: ${label}`)
 }
 
-const rlsContent = fs.readFileSync(rlsPath, 'utf-8')
+console.log('\n⚠️  INSTRUCCIONES (aplicar EN ESTE ORDEN, 001 → 002 → 003):\n')
+console.log('1. Abrí https://supabase.com/dashboard → tu proyecto → SQL Editor')
+console.log('2. Si todavía no corriste 001_initial_schema.sql, corrélo primero')
+console.log('3. Pegá y ejecutá el contenido completo de 002_align_schema_to_master_doc.sql')
+console.log('4. Pegá y ejecutá el contenido completo de 003_rls_policies.sql')
+console.log('\nAlternativamente, con Supabase CLI:')
+console.log('   $ supabase link --project-ref <tu-project-ref>')
+console.log('   $ supabase db push\n')
 
-console.log('📋 POLÍTICAS RLS A APLICAR:\n')
-console.log('Este documento contiene todas las políticas de seguridad para:')
-console.log('  • profiles')
-console.log('  • listings')
-console.log('  • listing_images')
-console.log('  • conversations')
-console.log('  • conversation_messages')
-console.log('  • favorites\n')
-
-console.log('⚠️  INSTRUCCIONES:\n')
-console.log('1. Abre https://supabase.com/dashboard')
-console.log('2. Ve a SQL Editor → Nueva Query')
-console.log('3. Abre supabase/migrations/RLS_POLICIES.md en tu editor')
-console.log('4. Copia cada bloque `CREATE POLICY` (uno por uno)')
-console.log('5. Pégalo en SQL Editor y ejecuta con "Run"\n')
-
-console.log('Alternativamente, si usas Supabase CLI:\n')
-console.log('1. Crea una migration: supabase migration new apply_rls_policies')
-console.log('2. Copia el contenido de RLS_POLICIES.md')
-console.log('3. supabase db push\n')
-
-console.log('EJEMPLO de primera política (profiles):\n')
-console.log('```sql')
-console.log('CREATE POLICY "Profiles are public readable"')
-console.log('  ON profiles FOR SELECT USING (true);')
-console.log('```\n')
-
-console.log('✅ Ver supabase/migrations/RLS_POLICIES.md para todas las políticas\n')
-
-console.log('VERIFICAR QUE RLS ESTÁ ACTIVADO:\n')
-console.log('Después de aplicar todas las políticas, ejecuta en SQL Editor:\n')
+console.log('VERIFICAR QUE RLS ESTÁ ACTIVADO EN TODAS LAS TABLAS:\n')
 console.log('```sql')
 console.log('SELECT tablename, rowsecurity')
 console.log('FROM pg_tables')
 console.log("WHERE schemaname = 'public'")
 console.log('ORDER BY tablename;')
-console.log('```\n')
-
+console.log('```')
 console.log('Debería mostrar rowsecurity = true en todas las tablas.\n')
+
+console.log('DESPUÉS de aplicar 002 y 003, corré el test automático de aislamiento:')
+console.log('   $ npm run test:rls')
+console.log('(necesita SUPABASE_SERVICE_ROLE_KEY en .env.local — ver .env.example)\n')

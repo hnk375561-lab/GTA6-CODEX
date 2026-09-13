@@ -1,5 +1,17 @@
 # RLS Policies (Row Level Security) — Fase 1
 
+> ⚠️ **OBSOLETO desde el 13/09/2026.** Este documento era texto sin aplicar,
+> no SQL versionado — no había garantía de que estas políticas existieran
+> realmente en la base. Las políticas reales, correctas y completas
+> (incluidas las tablas nuevas de la Fase 2: `locations`,
+> `vehicle_categories`, `vehicle_conditions`, `condition_question_sets`,
+> `seller_profiles`) están en
+> `supabase/migrations/003_rls_policies.sql`. Ese archivo es la fuente de
+> verdad — aplicalo con `supabase db push` o pegándolo en el SQL Editor del
+> dashboard, en orden, después de `002_align_schema_to_master_doc.sql`.
+> Se deja este `.md` como referencia histórica, no lo edites esperando que
+> tenga efecto.
+
 **Aplicar manualmente en Supabase Dashboard o vía `supabase db push`**
 
 Todas las tablas tienen RLS **ACTIVADO**. Las políticas definen qué cada usuario puede ver/modificar.
