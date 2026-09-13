@@ -43,7 +43,9 @@
     "generate:manifest-commons": "node scripts/generate-manifest-from-commons.mjs",
     "generate:manifest-commons:write": "node scripts/generate-manifest-from-commons.mjs --write",
     "add-vehicle": "node scripts/add-vehicle.mjs",
-    "generate:media-kit": "node scripts/generate-media-kit.mjs"
+    "generate:media-kit": "node scripts/generate-media-kit.mjs",
+    "setup:supabase": "node scripts/setup-supabase-fase1.mjs",
+    "setup:rls": "node scripts/setup-rls-fase1.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.1",
