@@ -347,15 +347,21 @@ export function EntityCard({
           : String(collectionIndex).padStart(2, '0')
         : null
 
+    /**
+     * NOTA (auditoría UX 2026-09-13, hallazgo D-3): este badge mostraba
+     * el sello de evidencia una segunda vez (mismo icono y label que
+     * `evidenceStamp`, ya visible arriba a la derecha de la foto) cada
+     * vez que la card no traía `rankBadge` — es decir, en la enorme
+     * mayoría de las apariciones de esta card, porque `rankBadge` solo
+     * se pasa desde vistas de rankings. Era el mismo dato duplicado dos
+     * veces en la misma tarjeta (hallazgo D-3, ítem 10 vs. ítem 3).
+     * Ahora este badge secundario solo existe para comunicar el ranking
+     * — el único dato que no está en ningún otro lado de la card — y no
+     * cae más al fallback de evidencia.
+     */
     const secondaryBadge = rankBadge
       ? { icon: `#${rankBadge.position}`, label: rankBadge.metricLabel, title: rankBadge.metricLabel }
-      : evidenceStamp
-        ? {
-            icon: evidenceStamp.icon,
-            label: evidenceStamp.shortLabel,
-            title: 'Nivel de evidencia — ver detalle completo en la ficha',
-          }
-        : null
+      : null
 
     return (
       <div className={cn('group', className)}>
@@ -399,21 +405,25 @@ export function EntityCard({
               )}
 
               {/* REFERENCIA DE ARCHIVO (+ número de colección si la card
-                  viene de una tira numerada, ej. FeaturedDossiers — antes
-                  se calculaba collectionLabel y no se mostraba en ningún
-                  lado) */}
-              <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                <div className="font-mono text-[9px] uppercase tracking-wider text-ink/40 bg-white/90 backdrop-blur-sm px-2 py-1 border border-border/50">
-                  REF: {vehicle.slug.slice(0, 8).toUpperCase()}
-                </div>
+                  viene de una tira numerada, ej. FeaturedDossiers).
+                  NOTA (auditoría UX 2026-09-13, hallazgo D-3): antes eran
+                  dos cajas con borde y fondo propios en la misma esquina
+                  para el mismo concepto (numeración de archivo). Se
+                  unifican en una sola caja separada por un punto; no se
+                  pierde ningún dato, solo el borde/fondo duplicado. */}
+              <div className="absolute top-3 left-3 flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-ink/40 bg-white/90 backdrop-blur-sm px-2 py-1 border border-border/50">
+                <span>REF: {vehicle.slug.slice(0, 8).toUpperCase()}</span>
                 {collectionLabel && (
-                  <div className="font-mono text-[9px] uppercase tracking-wider text-ink/40 bg-white/90 backdrop-blur-sm px-2 py-1 border border-border/50">
-                    {collectionLabel}
-                  </div>
+                  <>
+                    <span aria-hidden="true" className="text-ink/25">·</span>
+                    <span>{collectionLabel}</span>
+                  </>
                 )}
               </div>
 
-              {/* SELLO DE EVIDENCIA */}
+              {/* SELLO DE EVIDENCIA — único indicador de nivel de
+                  evidencia en la card (ver nota en secondaryBadge, más
+                  abajo, sobre la duplicación que había con este dato). */}
               {evidenceStamp && (
                 <div className={cn(
                   'absolute top-3 right-3 font-mono text-[9px] uppercase tracking-wider px-2 py-1 border bg-white/90 backdrop-blur-sm',
@@ -457,7 +467,7 @@ export function EntityCard({
 
                 {/* Pie de card */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                     {price && (
                       <p className="font-mono text-xs font-semibold text-white">
                         {price}
@@ -471,9 +481,16 @@ export function EntityCard({
                         {secondaryBadge.icon} {secondaryBadge.label}
                       </span>
                     )}
+                    {/* NOTA (auditoría UX 2026-09-13, hallazgo D-3): antes
+                        era un chip con borde y fondo propios, igual que
+                        precio y secondaryBadge, en prácticamente TODAS
+                        las cards (la mayoría de las 250 fichas tiene
+                        relations). Se baja a texto plano y mudo: mismo
+                        dato, pero deja de pesar igual que el precio o el
+                        ranking en la jerarquía visual de la card. */}
                     {resolvedRelationCount > 0 && (
                       <span
-                        className="font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 border border-white/30 bg-white/10 text-white"
+                        className="font-mono text-[9px] uppercase tracking-wider text-white/50"
                         title="Cantidad de fichas relacionadas"
                       >
                         {resolvedRelationCount} relacionado{resolvedRelationCount === 1 ? '' : 's'}
