@@ -1,0 +1,19 @@
+# Archivo local de configuración Supabase (NO commitear)
+.env.local
+.env.*.local
+
+# Logs y archivos temporales
+*.log
+logs/
+
+# Directorio de funciones si las hubiera
+functions/node_modules/
+functions/.env.local
+
+# Archivos de sistema
+.DS_Store
+.vscode/
+.idea/
+
+# Node modules (si se instala aquí alguna vez)
+node_modules/
